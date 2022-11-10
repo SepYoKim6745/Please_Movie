@@ -6,5 +6,6 @@ public class MainFrame {
 		// TODO Auto-generated method stub
 		System.out.println("Hello World");
 		System.out.println("김요");
+		System.out.println("test");
 	}
 }
