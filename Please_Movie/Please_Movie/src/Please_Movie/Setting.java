@@ -2,12 +2,32 @@ package Please_Movie;
 
 public class Setting {
 	private String appinfo;
-	private String userLocation = "�ڸ�����";
+	private String userLocation = "코리아텍";
 	private int curTime = 1200;
-	public Setting(int input) {
-		this.curTime = input;
+	public Setting(int time,String uLocation, String info) {
+		this.appinfo = info;
+		this.userLocation = uLocation;
+		this.curTime = time;
+	}
+	public String getAppinfo(){
+		return this.appinfo;
 	}
 	public void setUserLocation(String input) {
 		this.userLocation = input;
 	}
+<<<<<<< HEAD
+=======
+	public String getUserLocation() {
+		return this.userLocation;
+	}
+	public void setTime(int input) {
+		this.curTime = input;
+	}
+	public int getTime() {
+		return this.curTime;
+	}
+	public void displaySetting(){
+		//
+	}
+>>>>>>> branch 'master' of https://github.com/SepYoKim6745/Please_Movie.git
 }
