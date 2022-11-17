@@ -8,19 +8,19 @@ public class ReserveInfo {
 	private Show_info show_info;//Show_info클래스 import
 	
 	//메소드
-	public void setCharge() { //금액 입력 함수
-		
+	public void setCharge(int charge) { //금액 입력 함수
+		this.charge = charge;
 	}
 	public int getCharge() { //금액 반환 함수
-		
+		return charge;
 	}
-	public void setManCount() { //인원수 입력 함수
-		
+	public void setManCount(int manCount) { //인원수 입력 함수
+		this.manCount = manCount;
 	}
 	public int getManCount() { //인원수 반환 함수
-		
+		return manCount;
 	}
-	public void newMobileTicket() { //메모자엥 모바일 티켓 쓰기
+	public void newMobileTicket() { //메모자에 모바일 티켓 쓰기
 		
 	}
 	
