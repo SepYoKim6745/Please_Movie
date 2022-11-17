@@ -2,7 +2,7 @@ package Please_Movie;
 
 public class Setting {
 	private String appinfo;
-	private String userLocation = "ÄÚ¸®¾ÆÅØ";
+	private String userLocation = "ï¿½Ú¸ï¿½ï¿½ï¿½ï¿½ï¿½";
 	private int curTime = 1200;
 	public Setting(int input) {
 		this.curTime = input;
