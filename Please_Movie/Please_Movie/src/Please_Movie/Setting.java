@@ -10,14 +10,4 @@ public class Setting {
 	public void setUserLocation(String input) {
 		this.userLocation = input;
 	}
-	public String getUserLocation() {
-		return
-	}
-	public String setTime() {
-	
-	}
-	public String getTime() {
-		
-	}
-	public void displaySetting
 }
