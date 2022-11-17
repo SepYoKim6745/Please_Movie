@@ -8,6 +8,11 @@ public class ReserveInfo {
 	private Show_info show_info;//Show_info클래스 import
 	
 	//메소드
+	public ReserveInfo(int manCount,int charge, String selectedseat) {
+		this.charge = charge;
+		this.manCount = manCount;
+		this.selectedseat = selectedseat;
+	}
 	public void setCharge(int charge) { //금액 입력 함수
 		this.charge = charge;
 	}
