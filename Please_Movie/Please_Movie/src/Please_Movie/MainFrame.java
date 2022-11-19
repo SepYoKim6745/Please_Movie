@@ -50,15 +50,16 @@ class MovieList extends JFrame{
 
 
 public class MainFrame {
-	//ÇÊµå
+	//ï¿½Êµï¿½
 	private int page;
 	
-	//¸Þ¼Òµå
-	public static void main(String[] args) { //¸ÞÀÎ ¸Þ¼Òµå
+	//ï¿½Þ¼Òµï¿½
+	public static void main(String[] args) { //ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¼Òµï¿½
 		movieListDisplay();
 	}
 	public static void movieListDisplay() {
 		MovieList movielist = new MovieList();
+		System.out.println("Hello Please_Movie");
 	}
 	public static void mobileTicketDisplay() {
 		

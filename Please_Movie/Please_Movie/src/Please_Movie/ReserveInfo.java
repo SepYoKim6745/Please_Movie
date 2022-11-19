@@ -1,31 +1,31 @@
 package Please_Movie;
-import ShowInfo.*;
+//import ShowInfo.*; ì´ê±° ì˜¤ë¥˜ë‚œë‹¤.
 public class ReserveInfo {
-	//ÇÊµå
-	private int manCount; //ÀÎ¿ø¼ö
-	private int charge; //°áÁ¦ ±İ¾×
-	private String selectedseat; //¼±ÅÃµÈ ÁÂ¼® Á¤º¸
-	private Show_info show_info;//Show_infoÅ¬·¡½º import
+	//ï¿½Êµï¿½
+	private int manCount; //ï¿½Î¿ï¿½ï¿½ï¿½
+	private int charge; //ï¿½ï¿½ï¿½ï¿½ ï¿½İ¾ï¿½
+	private String selectedseat; //ï¿½ï¿½ï¿½Ãµï¿½ ï¿½Â¼ï¿½ ï¿½ï¿½ï¿½ï¿½
+//	private Show_info show_info;//Show_infoÅ¬ï¿½ï¿½ï¿½ï¿½ import ì´ê²ƒë„ ì˜¤ë¥˜ë‚œë‹¤.
 	
-	//¸Ş¼Òµå
+	//ï¿½Ş¼Òµï¿½
 	public ReserveInfo(int manCount,int charge, String selectedseat) {
 		this.charge = charge;
 		this.manCount = manCount;
 		this.selectedseat = selectedseat;
 	}
-	public void setCharge(int charge) { //±İ¾× ÀÔ·Â ÇÔ¼ö
+	public void setCharge(int charge) { //ï¿½İ¾ï¿½ ï¿½Ô·ï¿½ ï¿½Ô¼ï¿½
 		this.charge = charge;
 	}
-	public int getCharge() { //±İ¾× ¹İÈ¯ ÇÔ¼ö
+	public int getCharge() { //ï¿½İ¾ï¿½ ï¿½ï¿½È¯ ï¿½Ô¼ï¿½
 		return charge;
 	}
-	public void setManCount(int manCount) { //ÀÎ¿ø¼ö ÀÔ·Â ÇÔ¼ö
+	public void setManCount(int manCount) { //ï¿½Î¿ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ ï¿½Ô¼ï¿½
 		this.manCount = manCount;
 	}
-	public int getManCount() { //ÀÎ¿ø¼ö ¹İÈ¯ ÇÔ¼ö
+	public int getManCount() { //ï¿½Î¿ï¿½ï¿½ï¿½ ï¿½ï¿½È¯ ï¿½Ô¼ï¿½
 		return manCount;
 	}
-	public void newMobileTicket() { //¸Ş¸ğÀÚ¿¡ ¸ğ¹ÙÀÏ Æ¼ÄÏ ¾²±â
+	public void newMobileTicket() { //ï¿½Ş¸ï¿½ï¿½Ú¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ Æ¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		
 	}
 	
