@@ -24,8 +24,16 @@ public class Movie {
 	public void setMoviePeople(String[] actor, String director) {
 		this.actor = actor; //이거 모르겠네
 		this.director = director;
-		
-		
+	}
+	
+	public void setMovieEvaluation(String review, int rate, int ranking) {
+		this.review = review;
+		this.rate = rate;
+		this.ranking = ranking;
+	}
+	
+	public String getTitle() {
+		return title;
 	}
 	
 }
