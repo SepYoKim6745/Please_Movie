@@ -27,7 +27,7 @@ class MovieList extends JFrame{
 		add(p1,"Center");
 		add(p2,"South");
 		p1.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
-		p1.setLayout(new GridLayout(2,4,10,100));
+		p1.setLayout(new GridLayout(2,4,10,10));
 		p1.setBackground(Color.white);
 		p2.setLayout(new FlowLayout());
 		p2.setBackground(Color.gray);
