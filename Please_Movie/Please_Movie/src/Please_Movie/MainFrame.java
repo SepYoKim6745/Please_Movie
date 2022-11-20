@@ -1,5 +1,7 @@
 package Please_Movie;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.*;
 
 class MovieList extends JFrame{
@@ -9,12 +11,12 @@ class MovieList extends JFrame{
 	public MovieList() {
 		
 		setVisible(true);
-		setTitle("��ȭ�� ��Ź��");
+		setTitle("영화를 부탁해");
 		setSize(400,600);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		for(int i = 0; i<poster.length;i++) {
-			poster[i] = new ImageIcon("./Please_Movie/image/poster"+(i+1)+".jpg");
+			poster[i] = new ImageIcon("../../image/poster"+(i+1)+".jpg");
 		}
 		
 		
@@ -40,26 +42,60 @@ class MovieList extends JFrame{
 			arButtons[i] = new JButton(poster[i]);
 			arButtons[i].setBorder(BorderFactory.createEmptyBorder(10 , 10 , 10 , 10));
 			p1.add(arButtons[i]);
+			arButtons[i].addActionListener(new MyActionListener());
 		}
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
+	
+	class MyActionListener implements ActionListener{
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+			JButton btnVal = (JButton) e.getSource();
+			new chooseDisplay(btnVal.getIcon());
+			setVisible(false);
+		}
+		
+	}
+	
 }
 
 
 
+class chooseDisplay extends JFrame{ //실패.... 버튼 클릭 이벤트
+	public chooseDisplay(Icon icon) {
+		super("영화를 부탁해");
+		System.out.println(icon);
+		System.out.println("1");
+		JPanel p1 = new JPanel();
+		if(icon.equals("../../image/poster1.jpg\n")) {
+			p1.setBackground(Color.BLUE);
+		}
+		else if(icon.equals("../../image/poster2.jpg\n")) {
+			p1.setBackground(Color.RED);
+		}
+		else {
+			p1.setBackground(Color.BLACK);
+		}	
+		
+		setSize(400,600);
+		add(p1);
+		setVisible(true);
+	}
+	
+	
+}
+
+
 
 public class MainFrame {
-	//�ʵ�
-	private int page;
-	
-	//�޼ҵ�
-	public static void main(String[] args) { //���� �޼ҵ�
+	private int page = 0;
+	public static void main(String[] args) {
 		movieListDisplay();
 	}
 	public static void movieListDisplay() {
 		MovieList movielist = new MovieList();
-		System.out.println("Hello Please_Movie");
 	}
 	public static void mobileTicketDisplay() {
 		
@@ -76,7 +112,7 @@ public class MainFrame {
 	public static void seatInfoDisplay() {
 		
 	}
-	public static void choseDisplay() {
+	public static void chooseDisplay() {
 		
 	}
 }
