@@ -4,7 +4,7 @@ public class Setting {
 	
 	//필드
 	private String appinfo;//앱 정보
-	private String userLocation = "肄붾━�븘�뀓";//사용자 위치 정보
+	private String userLocation = "현재위치";//사용자 위치 정보
 	private int curTime = 1200; //현재 시각
 
 	//메소드
@@ -29,6 +29,5 @@ public class Setting {
 		return this.curTime;
 	}
 	public void displaySetting(){ //화면 출력 설정 함수(미정)
-		//
 	}
 }

@@ -3,6 +3,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
+import Please_Movie.Setting;
 
 class MovieList extends JFrame{
 	JButton[] arButtons = new JButton[8];
