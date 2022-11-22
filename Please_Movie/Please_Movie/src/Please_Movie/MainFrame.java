@@ -39,7 +39,7 @@ class MovieList extends JFrame{
 		for(int i = 0; i<arButtons.length; i++) {
 			arButtons[i] = new JButton(poster[i]);
 			arButtons[i].setBorder(BorderFactory.createEmptyBorder(10 , 10 , 10 , 10));
-			arButtons[i].setText(""+(i+1));
+			arButtons[i].setName(""+(i+1));
 			p1.add(arButtons[i]);
 			arButtons[i].addActionListener(new MyActionListener());
 		}
@@ -52,7 +52,7 @@ class MovieList extends JFrame{
 		public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
 			JButton btnVal = (JButton) e.getSource();
-			new chooseDisplay(btnVal.getText());
+			new chooseDisplay(btnVal.getName());
 			setVisible(false);
 		}
 		
@@ -61,15 +61,15 @@ class MovieList extends JFrame{
 }
 
 class chooseDisplay extends JFrame{ //실패.... 버튼 클릭 이벤트
-	public chooseDisplay(String icon) {
+	public chooseDisplay(String name) {
 		super("영화를 부탁해");
-		System.out.println(icon);
+		System.out.println(name);
 		System.out.println("1");
 		JPanel p1 = new JPanel();
-		if(icon.equals("1")) {
+		if(name.equals("1")) {
 			p1.setBackground(Color.BLUE);
 		}
-		else if(icon.equals("../../image/poster2.jpg\n")) {
+		else if(name.equals("2")) {
 			p1.setBackground(Color.RED);
 		}
 		else {
