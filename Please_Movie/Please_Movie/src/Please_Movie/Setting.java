@@ -1,12 +1,10 @@
 package Please_Movie;
 
 public class Setting {
-	
 	//필드
 	private String appinfo;//앱 정보
 	private String userLocation = "현재위치";//사용자 위치 정보
 	private int curTime = 1200; //현재 시각
-
 	//메소드
 	public Setting(int time,String uLocation, String info) {//생성자 함수
 		this.appinfo = info;

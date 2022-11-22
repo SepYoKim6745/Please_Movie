@@ -62,7 +62,6 @@ class MovieList extends JFrame{
 }
 
 
-
 class chooseDisplay extends JFrame{ //실패.... 버튼 클릭 이벤트
 	public chooseDisplay(Icon icon) {
 		super("영화를 부탁해");
