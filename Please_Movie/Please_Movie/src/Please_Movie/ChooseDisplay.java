@@ -3,7 +3,7 @@ import java.awt.Color;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-class ChooseDisplay extends JFrame{
+public class ChooseDisplay extends JFrame{
 	public ChooseDisplay(String name) {
 		super("영화를 부탁해");
 		JPanel p1 = new JPanel();
