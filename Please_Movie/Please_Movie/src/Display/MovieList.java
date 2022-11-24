@@ -15,8 +15,10 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 public class MovieList extends JFrame{
-	JButton[] arButtons = new JButton[8];
+	JButton[] MVButtons = new JButton[8];
 	ImageIcon[] poster = new ImageIcon[8];
+	JButton[] NVButtons = new JButton[3];
+	ImageIcon[] bar = new ImageIcon[3];
 	JPanel p1,p2;
 	public MovieList() {
 		
@@ -27,6 +29,10 @@ public class MovieList extends JFrame{
 		
 		for(int i = 0; i<poster.length;i++) {
 			poster[i] = new ImageIcon("Please_Movie/src/image/poster"+(i+1)+".jpg");
+		}
+		
+		for(int i = 0; i<bar.length;i++) {
+			bar[i] = new ImageIcon("Please_Movie/src/image/Bar"+(i+1)+".jpg");
 		}
 		Container contentPane = getContentPane();
 		contentPane.setBackground(Color.white);
@@ -41,17 +47,18 @@ public class MovieList extends JFrame{
 		p1.setBackground(Color.white);
 		p2.setLayout(new FlowLayout());
 		p2.setBackground(Color.gray);
-		p2.add(new JButton("1"));
-		p2.add(new JButton("2"));
-		p2.add(new JButton("3"));
 		
+		for(int i = 0; i<bar.length; i++) {
+			NVButtons[i] = new JButton(bar[i]);
+			p2.add(NVButtons[i]);
+		}
 		
-		for(int i = 0; i<arButtons.length; i++) {
-			arButtons[i] = new JButton(poster[i]);
-			arButtons[i].setBorder(BorderFactory.createEmptyBorder(10 , 10 , 10 , 10));
-			arButtons[i].setName(""+(i+1));
-			p1.add(arButtons[i]);
-			arButtons[i].addActionListener(new MyActionListener());
+		for(int i = 0; i<MVButtons.length; i++) {
+			MVButtons[i] = new JButton(poster[i]);
+			MVButtons[i].setBorder(BorderFactory.createEmptyBorder(10 , 10 , 10 , 10));
+			MVButtons[i].setName(""+(i+1));
+			p1.add(MVButtons[i]);
+			MVButtons[i].addActionListener(new MyActionListener());
 		}
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
