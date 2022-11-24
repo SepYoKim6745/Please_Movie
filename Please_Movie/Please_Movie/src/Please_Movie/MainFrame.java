@@ -16,7 +16,7 @@ class MovieList extends JFrame{
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		for(int i = 0; i<poster.length;i++) {
-			poster[i] = new ImageIcon("src/image/poster"+(i+1)+".jpg");
+			poster[i] = new ImageIcon("image/poster"+(i+1)+".jpg");
 		}				
 		Container contentPane = getContentPane();
 		contentPane.setBackground(Color.white);
