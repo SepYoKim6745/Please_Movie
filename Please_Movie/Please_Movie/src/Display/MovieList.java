@@ -14,7 +14,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-class MovieList extends JFrame{
+public class MovieList extends JFrame{
 	JButton[] arButtons = new JButton[8];
 	ImageIcon[] poster = new ImageIcon[8];
 	JPanel p1,p2;
@@ -26,7 +26,7 @@ class MovieList extends JFrame{
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		for(int i = 0; i<poster.length;i++) {
-			poster[i] = new ImageIcon("src/image/poster"+(i+1)+".jpg");
+			poster[i] = new ImageIcon("Please_Movie/src/image/poster"+(i+1)+".jpg");
 		}
 		Container contentPane = getContentPane();
 		contentPane.setBackground(Color.white);
