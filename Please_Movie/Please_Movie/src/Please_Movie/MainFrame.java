@@ -3,7 +3,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
-//메인 수정 요망  
+//메인 수정 요망;
 class MovieList extends JFrame{
 	JButton[] arButtons = new JButton[8];
 	ImageIcon[] poster = new ImageIcon[8];
