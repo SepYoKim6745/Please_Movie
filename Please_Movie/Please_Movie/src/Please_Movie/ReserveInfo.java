@@ -1,5 +1,4 @@
 package Please_Movie;
-//import ShowInfo.*; 이거 오류난다.
 public class ReserveInfo {
 	//�ʵ�
 	private int manCount; //�ο���

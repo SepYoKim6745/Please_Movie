@@ -3,7 +3,9 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
-//메인 수정 요망;
+//메인 수정 요망
+import Please_Movie.*;
+
 class MovieList extends JFrame{
 	JButton[] arButtons = new JButton[8];
 	ImageIcon[] poster = new ImageIcon[8];
@@ -16,8 +18,8 @@ class MovieList extends JFrame{
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		for(int i = 0; i<poster.length;i++) {
-			poster[i] = new ImageIcon("image/poster"+(i+1)+".jpg");
-		}				
+			poster[i] = new ImageIcon("src/image/poster"+(i+1)+".jpg");
+		}
 		Container contentPane = getContentPane();
 		contentPane.setBackground(Color.white);
 		contentPane.setLayout(new BorderLayout());
@@ -59,12 +61,9 @@ class MovieList extends JFrame{
 	}
 	
 }
-
 class chooseDisplay extends JFrame{ //실패.... 버튼 클릭 이벤트
 	public chooseDisplay(String name) {
 		super("영화를 부탁해");
-		System.out.println(name);
-		System.out.println("1");
 		JPanel p1 = new JPanel();
 		if(name.equals("1")) {
 			p1.setBackground(Color.BLUE);
@@ -80,11 +79,7 @@ class chooseDisplay extends JFrame{ //실패.... 버튼 클릭 이벤트
 		add(p1);
 		setVisible(true);
 	}
-	
-	
 }
-
-
 public class MainFrame {
 	private int page = 0;
 	public static void main(String[] args) {
