@@ -12,7 +12,7 @@ public class MainFrame {
 		movieListDisplay();
 	}
 	public static void movieListDisplay() {
-		MovieList movielist = new MovieList();
+		new MovieList();
 	}
 	public static void mobileTicketDisplay() {
 		

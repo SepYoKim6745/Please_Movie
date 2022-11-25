@@ -18,7 +18,7 @@ public class MovieList extends JFrame{
 		Color brightGray = new Color(0xbebebe);
 		
 		setVisible(true);
-		setTitle("¿µÈ­¸¦ ºÎÅ¹ÇØ");
+		setTitle("ï¿½ï¿½È­ï¿½ï¿½ ï¿½ï¿½Å¹ï¿½ï¿½");
 		setSize(600,900);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
@@ -56,7 +56,7 @@ public class MovieList extends JFrame{
 		add(p2,"South");
 		p1.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
 		p1.setLayout(new FlowLayout(FlowLayout.LEFT,30,30));
-		p1.setBackground(Color.black);
+		p1.setBackground(Color.white);
 		p2.setLayout(new FlowLayout(FlowLayout.CENTER,100,10));
 		p2.setBackground(brightGray);
 		
