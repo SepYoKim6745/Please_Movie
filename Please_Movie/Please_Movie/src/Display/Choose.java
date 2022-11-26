@@ -3,14 +3,17 @@ import Please_Movie.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.net.*;
+import java.util.*;
 
 import javax.swing.*;
 
 import Display.MovieList.MyActionListener;
-
 public class Choose extends JFrame{
+	private final Map<String, ImageIcon> imageMap;
+	private String movieName;
 	public Choose(String name) {
-		
+		movieName = name;
 		JButton[] NVButtons = new JButton[3];
 		ImageIcon[] bar = new ImageIcon[3];
 		JPanel p1,p2;
@@ -63,8 +66,41 @@ public class Choose extends JFrame{
 		NVButtons[0].addActionListener(new HomeAction()); // 홈화면 액션 리스너
 		NVButtons[1].addActionListener(new MobileTicketAction()); // 모바일티켓 액션 리스너
 		NVButtons[2].addActionListener(new SettingAction()); // setting 액션 리스너
+		
+		
+		String[] nameList = {"Mario", "Luigi", "Bowser", "Koopa", "Princess"};
+		imageMap = createImageMap(nameList);
+		JList list = new JList(nameList);
+		list.setCellRenderer(new MarioListRenderer());
+		p1.add(list);
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
+	
+	public Map<String, ImageIcon> createImageMap(String[] list){
+		Map<String, ImageIcon> map = new HashMap<>();
+		try {
+			map.put("Mario", new ImageIcon(new URL("http://i.stack.imgur.com/NCsHu.png")));
+            map.put("Luigi", new ImageIcon(new URL("http://i.stack.imgur.com/UvHN4.png")));
+            map.put("Bowser", new ImageIcon(new URL("http://i.stack.imgur.com/s89ON.png")));
+            map.put("Koopa", new ImageIcon(new URL("http://i.stack.imgur.com/QEK2o.png")));
+            map.put("Princess", new ImageIcon(new URL("http://i.stack.imgur.com/f4T4l.png")));
+		} catch(Exception ex) {
+			ex.printStackTrace();
+		}
+		return map;
+	}
+	
+	public class MarioListRenderer extends DefaultListCellRenderer{
+		public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
+			  JLabel label = (JLabel) super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
+	            label.setIcon(imageMap.get((String) value));
+	            label.setHorizontalTextPosition(JLabel.RIGHT);
+			return label;
+			
+		}
+	}
+	
 	
 	class BackMenuAction implements ActionListener{
 		@Override

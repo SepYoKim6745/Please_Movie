@@ -22,7 +22,7 @@ public class MovieList extends JFrame{
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		for(int i = 0; i<poster.length;i++) {
-			poster[i] = new ImageIcon("Please_Movie/src/image/poster"+(i+1)+".jpg");
+			poster[i] = new ImageIcon("/Please_Movie/Please_Movie/Please_Movie/src/image/poster"+(i+1)+".jpg");
 			Image posterImage = poster[i].getImage();
 			Image changeImg = posterImage.getScaledInstance(150,200,Image.SCALE_SMOOTH);
 			poster[i] = new ImageIcon(changeImg);
