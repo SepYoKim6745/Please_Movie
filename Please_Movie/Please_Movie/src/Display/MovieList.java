@@ -1,5 +1,4 @@
 package Display;
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.*;
@@ -18,7 +17,7 @@ public class MovieList extends JFrame{
 		Color brightGray = new Color(0xbebebe);
 		
 		setVisible(true);
-		setTitle("��ȭ�� ��Ź��");
+		setTitle("영화를 부탁해");
 		setSize(600,900);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
@@ -85,6 +84,8 @@ public class MovieList extends JFrame{
 		public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
 			JButton btnVal = (JButton) e.getSource();
+			new Choose(btnVal.getName());
+			setVisible(false);
 		}
 		
 	}
