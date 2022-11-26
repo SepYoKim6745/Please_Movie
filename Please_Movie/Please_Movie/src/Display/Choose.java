@@ -101,7 +101,6 @@ public class Choose extends JFrame{
 		}
 	}
 	
-	
 	class BackMenuAction implements ActionListener{
 		@Override
 		public void actionPerformed(ActionEvent e) {
