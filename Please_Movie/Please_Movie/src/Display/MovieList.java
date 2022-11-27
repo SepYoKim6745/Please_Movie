@@ -28,7 +28,7 @@ public class MovieList extends JFrame{
 		}
 		
 		for(int i = 0; i<bar.length;i++) {
-			bar[i] = new ImageIcon("Please_Movie/src/image/Bar"+(i+1)+".jpg");
+			bar[i] = new ImageIcon("Please_Movie/Please_Movie/src/image/Bar"+(i+1)+".jpg");
 			Image barimage = bar[i].getImage();
 			Image changeImg = barimage.getScaledInstance(60,40,Image.SCALE_SMOOTH);
 			bar[i] = new ImageIcon(changeImg);
@@ -67,7 +67,7 @@ public class MovieList extends JFrame{
 		
 		for(int i = 0; i<MVButtons.length; i++) {
 			MVButtons[i] = new JButton(poster[i]);
-			MVButtons[i].setName(""+(i+1));
+			MVButtons[i].setName("Please_Movie/Please_Movie/src/image/poster"+(i+1)+".jpg");
 			MVButtons[i].setPreferredSize(new Dimension(150,200));
 			p1.add(MVButtons[i]);
 			MVButtons[i].addActionListener(new MyActionListener());
@@ -83,7 +83,7 @@ public class MovieList extends JFrame{
 		public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
 			JButton btnVal = (JButton) e.getSource();
-			new Choose(btnVal.getIcon());
+			new Choose(btnVal.getName());
 			setVisible(false);
 		}
 		
