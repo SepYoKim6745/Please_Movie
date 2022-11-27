@@ -42,14 +42,70 @@ public class Choose extends JFrame{
 		p1.setLayout(new FlowLayout(FlowLayout.LEFT,40,10));
 		p1.setBackground(Color.white);
 		
+		Image img;
+		Image updateImg;
+		ImageIcon updateIcon;
 		
 		JLabel imgLabel = new JLabel();
 		ImageIcon moviePoster = new ImageIcon(movieUrl);
-		Image img = moviePoster.getImage();
-		Image updateImg = img.getScaledInstance(90, 120, Image.SCALE_SMOOTH);
-		ImageIcon updateIcon = new ImageIcon(updateImg);
+		img = moviePoster.getImage();
+		updateImg = img.getScaledInstance(90, 120, Image.SCALE_SMOOTH);
+		updateIcon = new ImageIcon(updateImg);
 		imgLabel.setIcon(updateIcon);
 		JLabel thaterInfo = new JLabel("CGV - 천안 신부점 / 22:20 상영관: 8관 / 잔여 좌석: 15석 / 거 리 : 240M");
+		
+		JLabel imgLabel2 = new JLabel();
+		ImageIcon moviePoster2 = new ImageIcon(movieUrl);
+		img = moviePoster.getImage();
+		updateImg = img.getScaledInstance(90, 120, Image.SCALE_SMOOTH);
+		updateIcon = new ImageIcon(updateImg);
+		imgLabel2.setIcon(updateIcon);
+		JLabel thaterInfo2 = new JLabel("CGV - 천안 신부점 / 22:20 상영관: 8관 / 잔여 좌석: 15석 / 거 리 : 240M");
+		
+		JLabel imgLabel3 = new JLabel();
+		ImageIcon moviePoster3 = new ImageIcon(movieUrl);
+		img = moviePoster.getImage();
+		updateImg = img.getScaledInstance(90, 120, Image.SCALE_SMOOTH);
+		updateIcon = new ImageIcon(updateImg);
+		imgLabel3.setIcon(updateIcon);
+		JLabel thaterInfo3 = new JLabel("CGV - 천안 신부점 / 22:20 상영관: 8관 / 잔여 좌석: 15석 / 거 리 : 240M");
+		
+		JLabel imgLabel4 = new JLabel();
+		ImageIcon moviePoster4 = new ImageIcon(movieUrl);
+		img = moviePoster.getImage();
+		updateImg = img.getScaledInstance(90, 120, Image.SCALE_SMOOTH);
+		updateIcon = new ImageIcon(updateImg);
+		imgLabel4.setIcon(updateIcon);
+		JLabel thaterInfo4 = new JLabel("CGV - 천안 신부점 / 22:20 상영관: 8관 / 잔여 좌석: 15석 / 거 리 : 240M");
+		
+		JLabel imgLabel5 = new JLabel();
+		ImageIcon moviePoster5 = new ImageIcon(movieUrl);
+		img = moviePoster.getImage();
+		updateImg = img.getScaledInstance(90, 120, Image.SCALE_SMOOTH);
+		updateIcon = new ImageIcon(updateImg);
+		imgLabel5.setIcon(updateIcon);
+		JLabel thaterInfo5 = new JLabel("CGV - 천안 신부점 / 22:20 상영관: 8관 / 잔여 좌석: 15석 / 거 리 : 240M");
+		
+//		JLabel imgLabel6 = new JLabel();
+//		ImageIcon moviePoster6 = new ImageIcon(movieUrl);
+//		img = moviePoster.getImage();
+//		updateImg = img.getScaledInstance(90, 120, Image.SCALE_SMOOTH);
+//		updateIcon = new ImageIcon(updateImg);
+//		imgLabel6.setIcon(updateIcon);
+//		JLabel thaterInfo6 = new JLabel("CGV - 천안 신부점 / 22:20 상영관: 8관 / 잔여 좌석: 15석 / 거 리 : 240M");
+		
+//		JLabel imgLabelArr[] = new JLabel[8];
+//		ImageIcon moviePosterArr[] = new ImageIcon[8];
+//		JLabel thaterInfoArr[] = new JLabel[8];
+//		for(int i = 0; i < 8; i++) {
+//			moviePosterArr[i] = new ImageIcon(movieUrl);
+//			img = moviePosterArr[i].getImage();
+//			updateImg = img.getScaledInstance(90, 120, Image.SCALE_SMOOTH);
+//			updateIcon = new ImageIcon(updateImg);
+//			imgLabelArr[i].setIcon(updateIcon);
+//			thaterInfoArr[i] = new JLabel("CGV - 천안 신부점 / 22:20 상영관: 8관 / 잔여 좌석: 15석 / 거 리 : 240M");
+//			
+//		}
 		
 		
         //imgLabel.setBounds(0, 0, 0, 0);
@@ -70,6 +126,20 @@ public class Choose extends JFrame{
 		p1.add("Center", centerPanel);
 		p1.add(imgLabel);
 		p1.add(thaterInfo);
+		p1.add(imgLabel2);
+		p1.add(thaterInfo2);
+		p1.add(imgLabel3);
+		p1.add(thaterInfo3);
+		p1.add(imgLabel4);
+		p1.add(thaterInfo4);
+		p1.add(imgLabel5);
+		p1.add(thaterInfo5);
+//		p1.add(imgLabel6);
+//		p1.add(thaterInfo6);
+//		for(int i = 0; i < 8; i++) {
+//			p1.add(imgLabelArr[i]);
+//			p1.add(thaterInfoArr[i]);
+//		}
 		
 		
 		//메뉴바 생성 
