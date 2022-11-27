@@ -79,8 +79,7 @@ public class Choose extends JFrame{
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
-	
-	
+		
 	class BackMenuAction implements ActionListener{
 		@Override
 		public void actionPerformed(ActionEvent e) {
