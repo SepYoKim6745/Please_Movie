@@ -3,6 +3,8 @@ import Please_Movie.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.net.*;
 import java.util.*;
 
@@ -54,6 +56,22 @@ public class Choose extends JFrame{
 		imgLabel.setIcon(updateIcon);
 		JLabel thaterInfo = new JLabel("CGV - 천안 신부점 / 22:20 상영관: 8관 / 잔여 좌석: 15석 / 거 리 : 240M");
 		
+		imgLabel.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent e) {
+				new Setting();
+				setVisible(false);
+			}
+		});
+		
+		thaterInfo.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent e) {
+				new Setting();
+				setVisible(false);
+			}
+		});
+		
+		
+		
 		JLabel imgLabel2 = new JLabel();
 		ImageIcon moviePoster2 = new ImageIcon(movieUrl);
 		img = moviePoster.getImage();
@@ -61,6 +79,21 @@ public class Choose extends JFrame{
 		updateIcon = new ImageIcon(updateImg);
 		imgLabel2.setIcon(updateIcon);
 		JLabel thaterInfo2 = new JLabel("CGV - 천안 신부점 / 22:20 상영관: 8관 / 잔여 좌석: 15석 / 거 리 : 240M");
+		
+		imgLabel2.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent e) {
+				new Setting();
+				setVisible(false);
+			}
+		});
+		
+		thaterInfo2.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent e) {
+				new Setting();
+				setVisible(false);
+			}
+		});
+		
 		
 		JLabel imgLabel3 = new JLabel();
 		ImageIcon moviePoster3 = new ImageIcon(movieUrl);
@@ -70,6 +103,21 @@ public class Choose extends JFrame{
 		imgLabel3.setIcon(updateIcon);
 		JLabel thaterInfo3 = new JLabel("CGV - 천안 신부점 / 22:20 상영관: 8관 / 잔여 좌석: 15석 / 거 리 : 240M");
 		
+		imgLabel3.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent e) {
+				new Setting();
+				setVisible(false);
+			}
+		});
+		
+		thaterInfo3.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent e) {
+				new Setting();
+				setVisible(false);
+			}
+		});
+		
+		
 		JLabel imgLabel4 = new JLabel();
 		ImageIcon moviePoster4 = new ImageIcon(movieUrl);
 		img = moviePoster.getImage();
@@ -78,6 +126,20 @@ public class Choose extends JFrame{
 		imgLabel4.setIcon(updateIcon);
 		JLabel thaterInfo4 = new JLabel("CGV - 천안 신부점 / 22:20 상영관: 8관 / 잔여 좌석: 15석 / 거 리 : 240M");
 		
+		imgLabel4.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent e) {
+				new Setting();
+				setVisible(false);
+			}
+		});
+		
+		thaterInfo4.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent e) {
+				new Setting();
+				setVisible(false);
+			}
+		});
+		
 		JLabel imgLabel5 = new JLabel();
 		ImageIcon moviePoster5 = new ImageIcon(movieUrl);
 		img = moviePoster.getImage();
@@ -85,6 +147,21 @@ public class Choose extends JFrame{
 		updateIcon = new ImageIcon(updateImg);
 		imgLabel5.setIcon(updateIcon);
 		JLabel thaterInfo5 = new JLabel("CGV - 천안 신부점 / 22:20 상영관: 8관 / 잔여 좌석: 15석 / 거 리 : 240M");
+		
+		imgLabel5.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent e) {
+				new Setting();
+				setVisible(false);
+			}
+		});
+		
+		thaterInfo5.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent e) {
+				new Setting();
+				setVisible(false);
+			}
+		});
+		
 		
 //		JLabel imgLabel6 = new JLabel();
 //		ImageIcon moviePoster6 = new ImageIcon(movieUrl);
