@@ -24,14 +24,14 @@ public class MovieList extends JFrame{
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		for(int i = 0; i<poster.length;i++) {
-			poster[i] = new ImageIcon("Please_Movie/src/image/poster"+(i+1)+".jpg");
+			poster[i] = new ImageIcon("Please_Movie/Please_Movie/src/image/poster"+(i+1)+".jpg");
 			Image posterImage = poster[i].getImage();
 			Image changeImg = posterImage.getScaledInstance(150,200,Image.SCALE_SMOOTH);
 			poster[i] = new ImageIcon(changeImg);
 		}
 		
 		for(int i = 0; i<bar.length;i++) {
-			bar[i] = new ImageIcon("Please_Movie/src/image/Bar"+(i+1)+".jpg");
+			bar[i] = new ImageIcon("Please_Movie/Please_Movie/src/image/Bar"+(i+1)+".jpg");
 			Image barimage = bar[i].getImage();
 			Image changeImg = barimage.getScaledInstance(60,40,Image.SCALE_SMOOTH);
 			bar[i] = new ImageIcon(changeImg);
@@ -70,7 +70,7 @@ public class MovieList extends JFrame{
 		
 		for(int i = 0; i<MVButtons.length; i++) {
 			MVButtons[i] = new JButton(poster[i]);
-			MVButtons[i].setName("Please_Movie/src/image/poster"+(i+1)+".jpg");
+			MVButtons[i].setName("Please_Movie/Please_Movie/src/image/poster"+(i+1)+".jpg");
 			MVButtons[i].setPreferredSize(new Dimension(150,200));
 			p1.add(MVButtons[i]);
 			MVButtons[i].addActionListener(new MyActionListener());
