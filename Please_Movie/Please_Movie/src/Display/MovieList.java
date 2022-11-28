@@ -74,7 +74,6 @@ public class MovieList extends JFrame{
 		setVisible(true);
 		contentPane.paint(contentPane.getGraphics());
 	}
-	
 	class MyActionListener implements ActionListener{
 		@Override
 		public void actionPerformed(ActionEvent e) {
@@ -82,8 +81,6 @@ public class MovieList extends JFrame{
 			JButton btnVal = (JButton) e.getSource();
 			new Choose(btnVal.getName());
 			setVisible(false);
-		}
-		
+		}	
 	}
-	
 }
