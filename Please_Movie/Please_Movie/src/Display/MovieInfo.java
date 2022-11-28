@@ -7,8 +7,8 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 import javax.swing.border.*;
 
-public class Setting extends JFrame {
-	public Setting() {
+public class MovieInfo extends JFrame {
+	public MovieInfo() {
 		JButton[] NVButtons = new JButton[3];
 		ImageIcon[] bar = new ImageIcon[3];
 		JPanel p1, p2;
@@ -48,54 +48,9 @@ public class Setting extends JFrame {
 		add(p1, "Center");
 		add(p2, "South");
 
-		//p1 : main
-		p1.setLayout(new FlowLayout(FlowLayout.LEFT,20,20));
-		p1.setBackground(Color.white);
-		ImageIcon um = new ImageIcon("Please_Movie/Please_Movie/src/image/userlocation.jpg");
-
-		Box appInfo = new Box(BoxLayout.Y_AXIS);
-		JLabel appVersion = new JLabel("APP Info");
-		JLabel appDay = new JLabel("since 2022.11.13");
-		JLabel mapImage = new JLabel(um);
-		JCheckBox usingGPS = new JCheckBox("위치사용",false);
-		JLabel Address1 = new JLabel("천안시 동남구 병천면");
-		JLabel Address2 = new JLabel("가전리 충절로 1600");
-		JButton changeLoca = new JButton("위치변경");
-
-		mapImage.setBorder(BorderFactory.createEmptyBorder(30, 0, 30, 30));
-		Address1.setFont(new Font("맑은고딕", Font.BOLD,18));
-		Address2.setFont(new Font("맑은고딕", Font.BOLD,18));
-		Address2.setBorder(BorderFactory.createEmptyBorder(0, 20, 30, 0));
-		usingGPS.setFont(new Font("맑은고딕", Font.BOLD,25));
-		usingGPS.setBackground(Color.GREEN);
-		Address1.setAlignmentX(CENTER_ALIGNMENT);
-		Address2.setAlignmentX(CENTER_ALIGNMENT);
-		usingGPS.setAlignmentX(CENTER_ALIGNMENT);
-		changeLoca.setBackground(Color.CYAN);
-		changeLoca.setAlignmentX(CENTER_ALIGNMENT);
-		changeLoca.setFont(new Font("맑은고딕", Font.BOLD,30));
-		
-		Box LocaInfo = new Box(BoxLayout.X_AXIS);
-		Box LocaTexts = new Box(BoxLayout.Y_AXIS);
-		
-		LocaTexts.add(Address1);
-		LocaTexts.add(Address2);
-		LocaTexts.add(usingGPS);
-		LocaInfo.add(mapImage);
-		LocaInfo.add(LocaTexts);
-
-		appVersion.setFont(new Font("맑은고딕", Font.BOLD,30));
-		appDay.setFont(new Font("맑은고딕", Font.ITALIC,20));
-
-		appInfo.setAlignmentX(CENTER_ALIGNMENT);
-		appInfo.add(appVersion);
-		appInfo.add(appDay);
-		// mapImage.setAlignmentX(CENTER_ALIGNMENT);
 		
 		// p1.add(appVersion);
-		p1.add(appInfo);
-		p1.add(LocaInfo);
-		p1.add(changeLoca);
+        p1.setLayout(D);
 		//p1 end
 		
 		//p2 : nav
