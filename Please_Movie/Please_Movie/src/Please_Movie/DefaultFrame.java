@@ -1,16 +1,10 @@
-package Display;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.*;
-import javax.swing.*;
-
-public class MovieList extends JFrame{
-	JButton[] MVButtons = new JButton[8];
-	ImageIcon[] poster = new ImageIcon[8];
-	JButton[] NVButtons = new JButton[3];
-	ImageIcon[] bar = new ImageIcon[3];
-	JPanel p1,p2;
-	public MovieList() {
+package Please_Movie;
+public class DefaultFrame {
+/*
+	public DefaultFrame() {
+		JButton[] NVButtons = new JButton[3];
+		ImageIcon[] bar = new ImageIcon[3];
+		JPanel p1,p2;
 		
 		Color crimson = new Color(0xFF4f55);
 		Color brightGray = new Color(0xbebebe);
@@ -20,20 +14,12 @@ public class MovieList extends JFrame{
 		setSize(600,900);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		for(int i = 0; i<poster.length;i++) {
-			poster[i] = new ImageIcon("Please_Movie/Please_Movie/src/image/poster"+(i+1)+".jpg");
-			Image posterImage = poster[i].getImage();
-			Image changeImg = posterImage.getScaledInstance(150,200,Image.SCALE_SMOOTH);
-			poster[i] = new ImageIcon(changeImg);
-		}
-		
 		for(int i = 0; i<bar.length;i++) {
-			bar[i] = new ImageIcon("Please_Movie/Please_Movie/src/image/Bar"+(i+1)+".jpg");
+			bar[i] = new ImageIcon("Please_Movie/src/image/Bar"+(i+1)+".jpg");
 			Image barimage = bar[i].getImage();
 			Image changeImg = barimage.getScaledInstance(60,40,Image.SCALE_SMOOTH);
 			bar[i] = new ImageIcon(changeImg);
 		}
-		
 		
 		Container contentPane = getContentPane();
 		contentPane.setLayout(new BorderLayout());
@@ -44,6 +30,7 @@ public class MovieList extends JFrame{
 		backButtonImage = new ImageIcon("");
 		
 		JButton backButton = new JButton("<<---");
+		backButton.addActionListener(new BackMenuAction());
 		backButton.setBackground(crimson);
 		mb.add(backButton);
 		add(mb,"North");
@@ -64,29 +51,48 @@ public class MovieList extends JFrame{
 			NVButtons[i].setBackground(brightGray);
 			p2.add(NVButtons[i]);
 		}
-		
-		for(int i = 0; i<MVButtons.length; i++) {
-			MVButtons[i] = new JButton(poster[i]);
-			MVButtons[i].setName("Please_Movie/Please_Movie/src/image/poster"+(i+1)+".jpg");
-			MVButtons[i].setPreferredSize(new Dimension(150,200));
-			p1.add(MVButtons[i]);
-			MVButtons[i].addActionListener(new MyActionListener());
-		}
-		
-		
-		
+		NVButtons[0].addActionListener(new HomeAction()); // 홈화면 액션 리스너
+		NVButtons[1].addActionListener(new MobileTicketAction()); // 모바일티켓 액션 리스너
+		NVButtons[2].addActionListener(new SettingAction()); // setting 액션 리스너
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 	
-	class MyActionListener implements ActionListener{
+	class BackMenuAction implements ActionListener{
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			// TODO Auto-generated method stub
-			JButton btnVal = (JButton) e.getSource();
-			new Choose(btnVal.getName());
+			new MovieList();
 			setVisible(false);
 		}
 		
 	}
 	
+	class HomeAction implements ActionListener{
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			new MovieList();
+			setVisible(false);
+		}
+		
+	}
+	
+	class MobileTicketAction implements ActionListener{
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			new MobileTicket();
+			setVisible(false);
+		}
+		
+	}
+	
+	class SettingAction implements ActionListener{
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			new Setting();
+			setVisible(false);
+		}
+		
+	}
+	
+	}
+*/
 }

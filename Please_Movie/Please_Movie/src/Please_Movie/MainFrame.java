@@ -7,12 +7,12 @@ import Please_Movie.*;
 import Display.*;
 
 public class MainFrame {
-	private int page = 0;
+	public int page = 0;
 	public static void main(String[] args) {
 		movieListDisplay();
 	}
 	public static void movieListDisplay() {
-		MovieList movielist = new MovieList();
+		new MovieList();
 	}
 	public static void mobileTicketDisplay() {
 		
