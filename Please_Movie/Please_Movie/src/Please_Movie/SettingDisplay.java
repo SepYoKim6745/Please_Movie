@@ -8,7 +8,7 @@ public class SettingDisplay extends JFrame {
         Container con = getContentPane();
         Icon poster = new ImageIcon();
         con.setLayout(new BoxLayout(con, BoxLayout.Y_AXIS));
-		con.add(new ImageIcon());
+		//con.add(new ImageIcon());
         con.add(new JTextField(20));
 		con.add(new JButton("1"));
 		con.add(new JButton("1"));
