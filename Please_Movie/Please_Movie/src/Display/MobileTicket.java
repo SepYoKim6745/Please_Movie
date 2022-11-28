@@ -120,7 +120,7 @@ public class MobileTicket extends JFrame{
 		Image changeImg = QRImage.getScaledInstance(150,150,Image.SCALE_SMOOTH);
 		ImageIcon QR1 = new ImageIcon(changeImg);
 		JLabel QRLabel = new JLabel(QR1);
-		QRLabel.setBounds(100,391,300,300);
+		QRLabel.setBounds(100,390,300,300);
 		ticket.add(QRLabel);
 		
 		
