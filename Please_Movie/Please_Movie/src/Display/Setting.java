@@ -8,8 +8,6 @@ import javax.swing.*;
 // import javax.swing.border.*;
 import javax.swing.border.TitledBorder;
 
-<<<<<<< HEAD
-=======
 public class Setting extends JFrame {
 	public Setting() {
 		JButton[] NVButtons = new JButton[3];
@@ -127,5 +125,4 @@ public class Setting extends JFrame {
 			new Setting();
 		}
 	}
->>>>>>> 8032f75c9efdfb77c609484872451a00af1ecd6d
 }

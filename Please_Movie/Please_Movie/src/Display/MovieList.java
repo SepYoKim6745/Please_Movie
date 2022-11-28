@@ -15,7 +15,6 @@ public class MovieList extends JFrame{
 		Color crimson = new Color(0xFF4f55);
 		Color brightGray = new Color(0xbebebe);
 		
-		setVisible(true);
 		setTitle("영화를 부탁해");
 		setSize(600,900);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -50,8 +49,8 @@ public class MovieList extends JFrame{
 		
 		p1 = new JPanel();
 		p2 = new JPanel();
-		add(p1,"Center");
-		add(p2,"South");
+		contentPane.add(p1,"Center");
+		contentPane.add(p2,"South");
 		p1.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
 		p1.setLayout(new FlowLayout(FlowLayout.LEFT,30,30));
 		p1.setBackground(Color.white);
@@ -72,10 +71,8 @@ public class MovieList extends JFrame{
 			p1.add(MVButtons[i]);
 			MVButtons[i].addActionListener(new MyActionListener());
 		}
-		
-		
-		
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setVisible(true);
+		contentPane.paint(contentPane.getGraphics());
 	}
 	
 	class MyActionListener implements ActionListener{
