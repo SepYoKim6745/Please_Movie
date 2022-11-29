@@ -37,6 +37,7 @@ class MyDialog extends JDialog{
 		JLabel subInfo = new JLabel("<html><br><br>상영관 : 8관 <br> 잔여 좌석 : 15</html>");
 		subInfo.setForeground(Color.gray);
 		centerPanel.add(subInfo, "North");
+		
 	}
 }
 
