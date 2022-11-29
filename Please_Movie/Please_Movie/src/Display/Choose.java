@@ -11,8 +11,40 @@ import java.util.*;
 import javax.swing.*;
 
 import Display.MovieList.MyActionListener;
+
+class MyDialog extends JDialog{
+	String location;
+	String brand;
+	String time;
+	public MyDialog(JFrame frame, String title, String location, String brand, String time){
+		super(frame, title);
+		this.location = location;
+		this.brand = brand;
+		this.time = time;
+		this.setLayout(new BorderLayout());
+		this.setSize(500, 600);
+		JPanel p1 = new JPanel();
+		p1.setLayout(new FlowLayout());
+		this.add(p1,"North");
+		JLabel info = new JLabel(location + brand + "/" +time);
+		Font titleFont = new Font("굴림", Font.BOLD, 25);
+		info.setFont(titleFont);
+		p1.add(info);
+		
+		JPanel centerPanel = new JPanel();
+		centerPanel.setLayout(new BorderLayout());
+		this.add(centerPanel,"Center");
+		JLabel subInfo = new JLabel("<html><br><br>상영관 : 8관 <br> 잔여 좌석 : 15</html>");
+		subInfo.setForeground(Color.gray);
+		centerPanel.add(subInfo, "North");
+	}
+}
+
+
+
 public class Choose extends JFrame{
 	private String movieUrl;
+	MyDialog dialog;
 	public Choose(String string) {
 		JButton[] NVButtons = new JButton[3];
 		ImageIcon[] bar = new ImageIcon[3];
@@ -56,17 +88,19 @@ public class Choose extends JFrame{
 		imgLabel.setIcon(updateIcon);
 		JLabel thaterInfo = new JLabel("CGV - 천안 신부점 / 22:20 상영관: 8관 / 잔여 좌석: 15석 / 거 리 : 240M");
 		
+		dialog = new MyDialog(this, "영화를 부탁해", "천안 신부점", "CGV", "22:20");
+		
 		imgLabel.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
-				new Setting();
-				setVisible(false);
+				//new Setting();
+				dialog.setVisible(true);
 			}
 		});
 		
 		thaterInfo.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
-				new Setting();
-				setVisible(false);
+				//new Setting();
+				dialog.setVisible(true);
 			}
 		});
 		

@@ -50,7 +50,7 @@ public class MovieInfo extends JFrame {
 
 		
 		// p1.add(appVersion);
-        p1.setLayout(D);
+        //p1.setLayout(D);
 		//p1 end
 		
 		//p2 : nav

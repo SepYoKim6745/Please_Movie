@@ -91,6 +91,8 @@ public class MovieList extends JFrame{
 		public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
 			JButton btnVal = (JButton) e.getSource();
+			String path = System.getProperty("user.dir");
+		      System.out.println("Working Directory = " + path);
 			new Choose(btnVal.getName());
 			setVisible(false);
 		}	
