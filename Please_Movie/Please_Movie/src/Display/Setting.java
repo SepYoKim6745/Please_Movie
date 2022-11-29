@@ -60,20 +60,22 @@ public class Setting extends JFrame {
 		JCheckBox usingGPS = new JCheckBox("위치사용",false);
 		JLabel Address1 = new JLabel("천안시 동남구 병천면");
 		JLabel Address2 = new JLabel("가전리 충절로 1600");
+		Address1.setFont(MainFrame.nomone);
+		Address2.setFont(MainFrame.nomone);
 		JButton changeLoca = new JButton("위치변경");
 
 		mapImage.setBorder(BorderFactory.createEmptyBorder(30, 0, 30, 30));
-		Address1.setFont(new Font("맑은고딕", Font.BOLD,18));
-		Address2.setFont(new Font("맑은고딕", Font.BOLD,18));
+
 		Address2.setBorder(BorderFactory.createEmptyBorder(0, 20, 30, 0));
-		usingGPS.setFont(new Font("맑은고딕", Font.BOLD,25));
+		usingGPS.setFont(new Font("닉스곤체 B 2.0", Font.PLAIN,30));
+
 		usingGPS.setBackground(Color.GREEN);
 		Address1.setAlignmentX(CENTER_ALIGNMENT);
 		Address2.setAlignmentX(CENTER_ALIGNMENT);
 		usingGPS.setAlignmentX(CENTER_ALIGNMENT);
 		changeLoca.setBackground(Color.CYAN);
 		changeLoca.setAlignmentX(CENTER_ALIGNMENT);
-		changeLoca.setFont(new Font("맑은고딕", Font.BOLD,30));
+		changeLoca.setFont(MainFrame.nomone);
 		
 		Box LocaInfo = new Box(BoxLayout.X_AXIS);
 		Box LocaTexts = new Box(BoxLayout.Y_AXIS);
@@ -84,7 +86,7 @@ public class Setting extends JFrame {
 		LocaInfo.add(mapImage);
 		LocaInfo.add(LocaTexts);
 
-		appVersion.setFont(new Font("맑은고딕", Font.BOLD,30));
+		appVersion.setFont(MainFrame.boldone);
 		appDay.setFont(new Font("맑은고딕", Font.ITALIC,20));
 
 		appInfo.setAlignmentX(CENTER_ALIGNMENT);
