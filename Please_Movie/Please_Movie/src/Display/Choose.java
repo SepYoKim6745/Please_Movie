@@ -45,16 +45,22 @@ class MyDialog extends JDialog{
 		centerPanel.add(centerContent, "Center");
 		JLabel job = new JLabel("<html>직업 <br></html>");
 		JLabel job_detail = new JLabel("<html>- 군인<br><br>- 국가유공자<br><br>- 어린이<br><br></html>");
-		JLabel saleTime  = new JLabel("<html>직업 <br></html>");
-		JLabel saleTimePart = new JLabel("<html>- 군인<br><br>- 국가유공자<br><br>- 어린이<br><br></html>");
+		//JLabel saleTime  = new JLabel("<html>직업 <br></html>");
+		//JLabel saleTimePart = new JLabel("<html>- 군인<br><br>- 국가유공자<br><br>- 어린이<br><br></html>");
 		job.setFont(titleFont);
 		job.setForeground(Color.gray);
-		saleTime.setFont(titleFont);
-		saleTime.setForeground(Color.gray);
+		//saleTime.setFont(titleFont);
+		//saleTime.setForeground(Color.gray);
 		centerContent.add(job);
 		centerContent.add(job_detail);
-		centerContent.add(saleTime);
-		centerContent.add(saleTimePart);
+		//centerContent.add(saleTime);
+		//centerContent.add(saleTimePart);
+		JPanel footer = new JPanel();
+		footer.setLayout(new FlowLayout(FlowLayout.RIGHT, 30,0));
+		this.add(footer, "South");
+		JButton nextButton = new JButton("좌석 선택하기");
+		footer.add(nextButton);
+		
 	}
 }
 
