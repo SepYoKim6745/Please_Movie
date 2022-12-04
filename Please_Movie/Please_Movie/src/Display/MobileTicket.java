@@ -33,8 +33,6 @@ public class MobileTicket extends JFrame{
 		
 		JMenuBar mb = new JMenuBar();
 		mb.setBackground(crimson);
-		ImageIcon backButtonImage = new ImageIcon();
-		backButtonImage = new ImageIcon("");
 		
 		JLabel la = new JLabel(" ");
 		la.setFont(new Font("닉스곤체 B 2.0",Font.PLAIN, 25));

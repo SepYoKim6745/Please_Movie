@@ -5,7 +5,6 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
-import javax.swing.border.*;
 
 public class MovieInfo extends JFrame {
 	public MovieInfo(String posterAddress) {

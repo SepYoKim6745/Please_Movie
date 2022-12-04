@@ -94,7 +94,7 @@ public class SeatInfo extends JFrame {
 		btn_Op.setPreferredSize(new Dimension(100, 28));
 		btn_Op.setName("default");
 		btn_Op.setText("시야각");
-		//btn_Op.setName("0"+seat_i);
+		btn_Op.setBackground(null);
 		btn_Op.addActionListener(new OptionListener());
 		more_Op.add(btn_Op);
 		
@@ -112,13 +112,35 @@ public class SeatInfo extends JFrame {
 		
 		int seat_i = 0;
 		int tmp = 0;
+		String seat_number = "";
 		for(int j = 0; j<3; j++) {
 			tmp += 24;
 			if(j==1)tmp+=24;
 			for(int i = seat_i; i < tmp; i++ ) {
 				btn[i] = new JButton(icon);
 				btn[i].setPreferredSize(new Dimension(27, 28));
-				btn[i].setName("0"+i);
+				if(i < 24) {
+					seat_number += (char)((i / 4) + 65);
+					seat_number += "열";
+					seat_number += Integer.toString((i % 4)+1);
+					seat_number += "번";
+				}
+				else if(i < 72) {
+					int n = i - 24;
+					seat_number += (char)((n / 8) + 65);
+					seat_number += "열";
+					seat_number += Integer.toString((n % 4)+1);
+					seat_number += "번";
+				}
+				else if(i < 96) {
+					int k = i - 72;
+					seat_number += (char)((k / 4) + 65);
+					seat_number += "열";
+					seat_number += Integer.toString((k % 4)+1);
+					seat_number += "번";
+				}
+				btn[i].setName("0"+ seat_number);
+				seat_number = "";
 				btn[i].addActionListener(new MyActionListener()); //이벤트 리스너 인스턴스 생성
 			    seatPanel[j].add(btn[i]); //버튼을 프레임에 얹음
 				btn[i].setBackground(Color.WHITE);
@@ -145,24 +167,29 @@ public class SeatInfo extends JFrame {
 	    	add(P2,"North");
 	    	add(P1,"Center");
 	    	for (JButton A : selected_but) {
-	    		movie_select += (A.getName()).substring(1) + " ";
+	    		movie_select +=A.getName() + " ";
+				
 	    		System.out.println(movie_select);
 	    		count++;
 	    	}
-	    	JLabel L1 = new JLabel("총 인원 "+count+"명 "+ movie_select +"자리로 선택하시겠습니까?");
+			
+	    	JLabel L1 = new JLabel("총 인원 "+count+"명 "+ movie_select.substring(1) +"자리로 선택하시겠습니까?");
 	    	L1.setFont(new Font("닉스곤체 B 2.0",Font.PLAIN, 18));
 	    	P2.add(L1,"North");
 	    	JButton btn = new JButton("네");
 	    	btn.setBackground(crimson);
 	    	
 			btn.setPreferredSize(new Dimension(90, 30));
-			btn.addActionListener(new SelectListener()); //이벤트 리스너 인스턴스 생성
+			btn.addActionListener(new MobileTicketAction()); //이벤트 리스너 인스턴스 생성
+			btn.addActionListener(new DialCutListener()); //이벤트 리스너 인스턴스 생성
 		    P1.add(btn); //버튼을 프레임에 얹음
 		    
 		    JButton btn1 = new JButton("아니요");
 		    btn1.setBackground(crimson);
 			btn1.setPreferredSize(new Dimension(90, 30));
-			btn1.addActionListener(new SelectListener()); //이벤트 리스너 인스턴스 생성
+			
+			btn.addActionListener(new SelectListener()); //이벤트 리스너 인스턴스 생성
+			
 		    P1.add(btn1); //버튼을 프레임에 얹음
 	    	
 	        
@@ -170,6 +197,7 @@ public class SeatInfo extends JFrame {
 	        setVisible(true);
 	 
 	    }
+		
 	    class SelectListener implements ActionListener {
 			public void actionPerformed(ActionEvent e) {
 				JButton b = (JButton)e.getSource(); 
@@ -184,7 +212,7 @@ public class SeatInfo extends JFrame {
 					}
 					selected_but.clear();
 					num = 0;
-					new MobileTicket();
+					dispose();
 				}
 				else {
 					for(JButton A : selected_but) {
@@ -209,9 +237,9 @@ public class SeatInfo extends JFrame {
 	    	Container contentPane = getContentPane();
 	    	contentPane.setLayout(new BorderLayout());
 	    	
-	    	ImageIcon icon = new ImageIcon("Please_Movie/Please_Movie/src/image/seat.jpg");
+	    	ImageIcon icon = new ImageIcon("Please_Movie/src/image/view.png");
 	        Image im = icon.getImage();
-	        Image im2 = im.getScaledInstance(250, 250, Image.SCALE_DEFAULT);
+	        Image im2 = im.getScaledInstance(500, 250, Image.SCALE_DEFAULT);
 	    	ImageIcon icon2 = new ImageIcon(im2);
 	    	JLabel img = new JLabel(icon2);
 	    	
@@ -223,7 +251,12 @@ public class SeatInfo extends JFrame {
 	    }
 	 
 	}
-	 
+	class DialCutListener implements ActionListener {
+		public void actionPerformed(ActionEvent e) {
+			dispose();
+			setVisible(false);
+		}
+	}
 
 	
 	class MyActionListener implements ActionListener {
@@ -271,7 +304,7 @@ public class SeatInfo extends JFrame {
 			}
 			else {
 				b.setName("default");
-				b.setBackground(Color.red);
+				b.setBackground(null);
 				op_sw = false;
 			}
 			
@@ -296,7 +329,6 @@ public class SeatInfo extends JFrame {
 			new MovieList();
 			setVisible(false);
 		}
-
 	}
 	class MobileTicketAction implements ActionListener{
 		@Override
