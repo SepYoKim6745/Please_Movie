@@ -43,12 +43,10 @@ public class MovieList extends JFrame{
 		
 		JMenuBar mb = new JMenuBar();
 		mb.setBackground(crimson);
-		ImageIcon backButtonImage = new ImageIcon();
-		backButtonImage = new ImageIcon("");
 		
-		JButton backButton = new JButton("<<---");
-		backButton.setBackground(crimson);
-		mb.add(backButton);
+		JLabel la = new JLabel("Home");
+		la.setFont(new Font("닉스곤체 B 2.0",Font.PLAIN, 25));
+		mb.add(la);
 		add(mb,"North");
 		
 		p1 = new JPanel();
@@ -90,7 +88,6 @@ public class MovieList extends JFrame{
 		public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
 			JButton btnVal = (JButton) e.getSource();
-			System.out.print(btnVal.getName());
 			new MovieInfo(btnVal.getName());
 			setVisible(false);
 		}	

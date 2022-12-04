@@ -10,21 +10,24 @@ import java.util.*;
 
 import javax.swing.*;
 
+import Display.MovieInfo.BackMenuAction;
 import Display.MovieList.MyActionListener;
 
 class MyDialog extends JDialog{
 	String location;
 	String brand;
 	String time;
+	int select;
 	public MyDialog(JFrame frame, String title, String location, String brand, String time){
 		super(frame, title);
+		String[] people = {"1명", "2명", "3명"};
 		this.location = location;
 		this.brand = brand;
 		this.time = time;
 		this.setLayout(new BorderLayout());
-		this.setSize(500, 600);
+		this.setSize(400, 600);
 		JPanel p1 = new JPanel();
-		p1.setLayout(new FlowLayout());
+		p1.setLayout(new FlowLayout(FlowLayout.LEFT, 30, 30));
 		this.add(p1,"North");
 		JLabel info = new JLabel(location + brand + "/" +time);
 		Font titleFont = new Font("굴림", Font.BOLD, 25);
@@ -34,9 +37,48 @@ class MyDialog extends JDialog{
 		JPanel centerPanel = new JPanel();
 		centerPanel.setLayout(new BorderLayout());
 		this.add(centerPanel,"Center");
-		JLabel subInfo = new JLabel("<html><br><br>상영관 : 8관 <br> 잔여 좌석 : 15</html>");
+		JLabel subInfo = new JLabel("<html>상영관 : 8관 <br> 잔여 좌석 : 15<br><br><br><br></html>");
+		JPanel subNorthPanel = new JPanel();
+		subNorthPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 30, 0));
+		centerPanel.add(subNorthPanel,"North");
 		subInfo.setForeground(Color.gray);
-		centerPanel.add(subInfo, "North");
+		subNorthPanel.add(subInfo);
+		JPanel centerContent = new JPanel();
+		centerContent.setLayout(new FlowLayout(FlowLayout.LEFT, 80,0));
+		centerPanel.add(centerContent, "Center");
+		JLabel job = new JLabel("<html>직업 <br></html>");
+		JLabel job_detail = new JLabel("<html>- 군인<br><br>- 국가유공자<br><br>- 어린이<br><br></html>");
+		JLabel p  = new JLabel("<html>인원<br></html>");
+		JComboBox peopleComboBox = new JComboBox(people);
+		JLabel br  = new JLabel("<html> <br><br><br><br><br><br><br><br><br><br><br><br></html>");
+		//JLabel saleTimePart = new JLabel("<html>- 군인<br><br>- 국가유공자<br><br>- 어린이<br><br></html>");
+		String selectPeople = peopleComboBox.getSelectedItem().toString();
+		selectPeople = selectPeople.substring(0, 1);
+		select = Integer.parseInt(selectPeople);
+		job.setFont(titleFont);
+		job.setForeground(Color.gray);
+		p.setFont(titleFont);
+		p.setForeground(Color.gray);
+		centerContent.add(job);
+		centerContent.add(job_detail);
+		centerContent.add(br);
+		centerContent.add(p);
+		centerContent.add(peopleComboBox);
+		//centerContent.add(saleTime);
+		//centerContent.add(saleTimePart);
+		JPanel footer = new JPanel();
+		footer.setLayout(new FlowLayout(FlowLayout.RIGHT, 30,0));
+		this.add(footer, "South");
+		JButton nextButton = new JButton("좌석 선택하기");
+		footer.add(nextButton);
+		
+	}
+	class nextButton implements ActionListener{
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			ShowInfoFunc selectData = new ShowInfoFunc(select);
+			setVisible(false);
+		}
 		
 	}
 }
@@ -93,14 +135,12 @@ public class Choose extends JFrame{
 		
 		imgLabel.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
-				//new Setting();
 				dialog.setVisible(true);
 			}
 		});
 		
 		thaterInfo.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
-				//new Setting();
 				dialog.setVisible(true);
 			}
 		});
@@ -117,15 +157,13 @@ public class Choose extends JFrame{
 		
 		imgLabel2.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
-				new Setting();
-				setVisible(false);
+				dialog.setVisible(true);
 			}
 		});
 		
 		thaterInfo2.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
-				new Setting();
-				setVisible(false);
+				dialog.setVisible(true);
 			}
 		});
 		
@@ -140,15 +178,23 @@ public class Choose extends JFrame{
 		
 		imgLabel3.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
+<<<<<<< HEAD
 				new SeatInfo();
 				setVisible(false);
+=======
+				dialog.setVisible(true);
+>>>>>>> branch 'master' of https://github.com/SepYoKim6745/Please_Movie.git
 			}
 		});
 		
 		thaterInfo3.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
+<<<<<<< HEAD
 				new SeatInfo();
 				setVisible(false);
+=======
+				dialog.setVisible(true);
+>>>>>>> branch 'master' of https://github.com/SepYoKim6745/Please_Movie.git
 			}
 		});
 		
@@ -163,15 +209,13 @@ public class Choose extends JFrame{
 		
 		imgLabel4.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
-				new Setting();
-				setVisible(false);
+				dialog.setVisible(true);
 			}
 		});
 		
 		thaterInfo4.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
-				new Setting();
-				setVisible(false);
+				dialog.setVisible(true);
 			}
 		});
 		
@@ -185,42 +229,15 @@ public class Choose extends JFrame{
 		
 		imgLabel5.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
-				new Setting();
-				setVisible(false);
+				dialog.setVisible(true);
 			}
 		});
 		
 		thaterInfo5.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
-				new Setting();
-				setVisible(false);
+				dialog.setVisible(true);
 			}
 		});
-		
-		
-//		JLabel imgLabel6 = new JLabel();
-//		ImageIcon moviePoster6 = new ImageIcon(movieUrl);
-//		img = moviePoster.getImage();
-//		updateImg = img.getScaledInstance(90, 120, Image.SCALE_SMOOTH);
-//		updateIcon = new ImageIcon(updateImg);
-//		imgLabel6.setIcon(updateIcon);
-//		JLabel thaterInfo6 = new JLabel("CGV - 천안 신부점 / 22:20 상영관: 8관 / 잔여 좌석: 15석 / 거 리 : 240M");
-		
-//		JLabel imgLabelArr[] = new JLabel[8];
-//		ImageIcon moviePosterArr[] = new ImageIcon[8];
-//		JLabel thaterInfoArr[] = new JLabel[8];
-//		for(int i = 0; i < 8; i++) {
-//			moviePosterArr[i] = new ImageIcon(movieUrl);
-//			img = moviePosterArr[i].getImage();
-//			updateImg = img.getScaledInstance(90, 120, Image.SCALE_SMOOTH);
-//			updateIcon = new ImageIcon(updateImg);
-//			imgLabelArr[i].setIcon(updateIcon);
-//			thaterInfoArr[i] = new JLabel("CGV - 천안 신부점 / 22:20 상영관: 8관 / 잔여 좌석: 15석 / 거 리 : 240M");
-//			
-//		}
-		
-		
-        //imgLabel.setBounds(0, 0, 0, 0);
 		JPanel filterPanel = new JPanel();
 		filterPanel.setLayout(new FlowLayout(FlowLayout.LEFT,80,10));
 		filterPanel.setBackground(Color.white);
@@ -246,22 +263,16 @@ public class Choose extends JFrame{
 		p1.add(thaterInfo4);
 		p1.add(imgLabel5);
 		p1.add(thaterInfo5);
-//		p1.add(imgLabel6);
-//		p1.add(thaterInfo6);
-//		for(int i = 0; i < 8; i++) {
-//			p1.add(imgLabelArr[i]);
-//			p1.add(thaterInfoArr[i]);
-//		}
 		
 		
 		//메뉴바 생성 
 		JMenuBar mb = new JMenuBar();
 		mb.setBackground(crimson);
-		ImageIcon backButtonImage = new ImageIcon();
-		
-		//뒤로가기 버튼 생성 
-		backButtonImage = new ImageIcon("");
-		JButton backButton = new JButton("<<---");
+		ImageIcon arrow = new ImageIcon("src/image/arrow.png");
+		Image arrowImage = arrow.getImage();
+		arrowImage = arrowImage.getScaledInstance(50,20,Image.SCALE_SMOOTH);
+		ImageIcon aRrow = new ImageIcon(arrowImage);
+		JButton backButton = new JButton(aRrow);
 		backButton.addActionListener(new BackMenuAction());
 		backButton.setBackground(crimson);
 		mb.add(backButton);
@@ -289,7 +300,7 @@ public class Choose extends JFrame{
 	class BackMenuAction implements ActionListener{
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			new MovieList();
+			new MovieInfo(movieUrl);
 			setVisible(false);
 		}
 		

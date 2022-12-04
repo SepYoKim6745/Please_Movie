@@ -12,7 +12,7 @@ public class MovieInfo extends JFrame {
 		JButton[] NVButtons = new JButton[3];
 		ImageIcon[] bar = new ImageIcon[3];
 		JPanel p1, p2;
-        System.out.println(posterAddress.substring(29, 30));
+        //System.out.println(posterAddress.substring(29, 30));
         int movieNum = Integer.parseInt(posterAddress.substring(29, 30));
 
 		Color crimson = new Color(0xFF4f55);
@@ -34,8 +34,11 @@ public class MovieInfo extends JFrame {
 		//mb : top menu
 		JMenuBar mb = new JMenuBar(); //top
 		mb.setBackground(crimson);
-
-		JButton backButton = new JButton("<<---");
+		ImageIcon arrow = new ImageIcon("src/image/arrow.png");
+		Image arrowImage = arrow.getImage();
+		arrowImage = arrowImage.getScaledInstance(50,20,Image.SCALE_SMOOTH);
+		ImageIcon aRrow = new ImageIcon(arrowImage);
+		JButton backButton = new JButton(aRrow);
 		backButton.addActionListener(new BackMenuAction());
 		backButton.setBackground(crimson);
 		mb.add(backButton);
@@ -124,7 +127,6 @@ public class MovieInfo extends JFrame {
 		public void actionPerformed(ActionEvent e) {
 			JButton btnVal = (JButton) e.getSource();
 			new Choose(btnVal.getName());
-			System.out.print(btnVal.getName());
 			setVisible(false);
 		}
     }
