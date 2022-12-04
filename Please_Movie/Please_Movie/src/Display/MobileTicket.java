@@ -36,7 +36,7 @@ public class MobileTicket extends JFrame{
 		ImageIcon backButtonImage = new ImageIcon();
 		backButtonImage = new ImageIcon("");
 		
-		JLabel la = new JLabel("Home");
+		JLabel la = new JLabel(" ");
 		la.setFont(new Font("닉스곤체 B 2.0",Font.PLAIN, 25));
 		mb.add(la);
 		
@@ -71,7 +71,7 @@ public class MobileTicket extends JFrame{
 		ticket.setPreferredSize(new Dimension(500,700));
 		p1.add(ticket);
 		
-		ImageIcon poster = new ImageIcon("src/image/poster1.jpg");
+		ImageIcon poster = new ImageIcon("Please_Movie/src/image/poster1.jpg");
 		JLabel posterLabel = new JLabel(poster);
 		posterLabel.setBounds(50,50,150,200);
 		ticket.add(posterLabel);
@@ -116,15 +116,13 @@ public class MobileTicket extends JFrame{
 		str6.setForeground(gray1);
 		ticket.add(str6);
 		
-		ImageIcon QR = new ImageIcon("Please_Movie/Please_Movie/src/image/QR.jpg");
+		ImageIcon QR = new ImageIcon("Please_Movie/src/image/QR.jpg");
 		Image QRImage = QR.getImage();
 		Image changeImg = QRImage.getScaledInstance(150,150,Image.SCALE_SMOOTH);
 		ImageIcon QR1 = new ImageIcon(changeImg);
 		JLabel QRLabel = new JLabel(QR1);
 		QRLabel.setBounds(100,390,300,300);
 		ticket.add(QRLabel);
-		
-		
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}

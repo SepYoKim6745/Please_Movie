@@ -86,9 +86,6 @@ class MyDialog extends JDialog{
 		
 	}
 }
-
-
-
 public class Choose extends JFrame{
 	private String movieUrl;
 	MyDialog dialog;
@@ -170,7 +167,6 @@ public class Choose extends JFrame{
 				dialog.setVisible(true);
 			}
 		});
-		
 		
 		JLabel imgLabel3 = new JLabel();
 		ImageIcon moviePoster3 = new ImageIcon(movieUrl);
@@ -261,7 +257,7 @@ public class Choose extends JFrame{
 		//메뉴바 생성 
 		JMenuBar mb = new JMenuBar();
 		mb.setBackground(crimson);
-		ImageIcon arrow = new ImageIcon("src/image/arrow.png");
+		ImageIcon arrow = new ImageIcon("Please_Movie/src/image/arrow.png");
 		Image arrowImage = arrow.getImage();
 		arrowImage = arrowImage.getScaledInstance(50,20,Image.SCALE_SMOOTH);
 		ImageIcon aRrow = new ImageIcon(arrowImage);

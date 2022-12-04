@@ -28,7 +28,7 @@ public class SeatInfo extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		for(int i = 0; i<bar.length;i++) {
-			bar[i] = new ImageIcon("Please_Movie/Please_Movie/src/image/Bar"+(i+1)+".jpg");
+			bar[i] = new ImageIcon("Please_Movie/src/image/Bar"+(i+1)+".jpg");
 			Image barimage = bar[i].getImage();
 			Image changeImg = barimage.getScaledInstance(60,40,Image.SCALE_SMOOTH);
 			bar[i] = new ImageIcon(changeImg);
