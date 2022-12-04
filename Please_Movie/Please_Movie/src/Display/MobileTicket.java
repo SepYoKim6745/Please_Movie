@@ -22,7 +22,7 @@ public class MobileTicket extends JFrame{
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		for(int i = 0; i<bar.length;i++) {
-			bar[i] = new ImageIcon("Please_Movie/src/image/Bar"+(i+1)+".jpg");
+			bar[i] = new ImageIcon("Please_Movie/Please_Movie/src/image/Bar"+(i+1)+".jpg");
 			Image barimage = bar[i].getImage();
 			Image changeImg = barimage.getScaledInstance(60,40,Image.SCALE_SMOOTH);
 			bar[i] = new ImageIcon(changeImg);
@@ -36,9 +36,10 @@ public class MobileTicket extends JFrame{
 		ImageIcon backButtonImage = new ImageIcon();
 		backButtonImage = new ImageIcon("");
 		
-		JButton backButton = new JButton("<<---");
-		backButton.setBackground(crimson);
-		mb.add(backButton);
+		JLabel la = new JLabel("Home");
+		la.setFont(new Font("닉스곤체 B 2.0",Font.PLAIN, 25));
+		mb.add(la);
+		
 		contentPane.add(mb,"North");
 		
 		JPanel p1,p2;
@@ -70,7 +71,7 @@ public class MobileTicket extends JFrame{
 		ticket.setPreferredSize(new Dimension(500,700));
 		p1.add(ticket);
 		
-		ImageIcon poster = new ImageIcon("Please_Movie/Please_Movie/src/image/poster1.jpg");
+		ImageIcon poster = new ImageIcon("src/image/poster1.jpg");
 		JLabel posterLabel = new JLabel(poster);
 		posterLabel.setBounds(50,50,150,200);
 		ticket.add(posterLabel);
