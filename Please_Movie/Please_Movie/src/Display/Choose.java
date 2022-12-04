@@ -18,6 +18,8 @@ class MyDialog extends JDialog{
 	String location;
 	String brand;
 	String time;
+	String selectPeople;
+	JComboBox peopleComboBox;
 	int select;
 	public MyDialog(JFrame frame, String title, String location, String brand, String time){
 		super(frame, title);
@@ -50,13 +52,9 @@ class MyDialog extends JDialog{
 		JLabel job = new JLabel("<html>직업 <br></html>");
 		JLabel job_detail = new JLabel("<html>- 군인<br><br>- 국가유공자<br><br>- 어린이<br><br></html>");
 		JLabel p  = new JLabel("<html>인원<br></html>");
-		JComboBox peopleComboBox = new JComboBox(people);
+		peopleComboBox = new JComboBox(people);
 		JLabel br  = new JLabel("<html> <br><br><br><br><br><br><br><br><br><br><br><br></html>");
 		//JLabel saleTimePart = new JLabel("<html>- 군인<br><br>- 국가유공자<br><br>- 어린이<br><br></html>");
-		String selectPeople = peopleComboBox.getSelectedItem().toString();
-		System.out.print(selectPeople);
-		selectPeople = selectPeople.substring(0, 1);
-		select = Integer.parseInt(selectPeople);
 		job.setFont(titleFont);
 		job.setForeground(Color.gray);
 		p.setFont(titleFont);
@@ -79,6 +77,9 @@ class MyDialog extends JDialog{
 	class nextButton implements ActionListener{
 		@Override
 		public void actionPerformed(ActionEvent e) {
+			selectPeople = peopleComboBox.getSelectedItem().toString();
+			selectPeople = selectPeople.substring(0, 1);
+			select = Integer.parseInt(selectPeople);
 			System.out.print(select);
 			SeatInfo selectData = new SeatInfo();
 			setVisible(false);
