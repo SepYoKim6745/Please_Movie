@@ -3,12 +3,16 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.*;
 import javax.swing.*;
+import java.util.ArrayList;
 
 public class SeatInfo extends JFrame {
-	public static int num =0;
-	static boolean op_sw = false;
+	int num =0;
+	boolean op_sw = false;
+	//JButton [] seleted_but = new JButton[4];
+	ArrayList <JButton> selected_but = new ArrayList<JButton>();
 	public SeatInfo() {							// SeatInfo클래스 생성자 시작
 		/////////////////////////   기본 네비게이션바, 뒤로가기 버튼 , 후면 레이아웃   /////////////////////////////////////////////////////////////////////////////
+		
 		JButton[] NVButtons = new JButton[3];
 		ImageIcon[] bar = new ImageIcon[3];
 		JPanel p1,p2, p3, p4, p5, p6 ,p7;
@@ -97,25 +101,13 @@ public class SeatInfo extends JFrame {
 		String[] loca = {"East", "Center", "West"};
 		JButton[] btn= new JButton[seat_num];
 		ImageIcon icon = new ImageIcon("Please_Movie/Please_Movie/src/image/seat.jpg");
-		//ImageIcon icon2 = new ImageIcon("Please_Movie/Please_Movie/src/image/poster2.jpg");
 		for(int i = 0; i < 3; i++) {
 			seatPanel[i] = new JPanel();
 			p7.add(seatPanel[i],loca[i]);
 			seatPanel[i].setLayout(new GridLayout(6,(i==1?8:4)));
 			seatPanel[i].setBackground(realGray);
 		}
-		/*p4 = new JPanel();
-		p7.add(p4,"East");
-		p4.setLayout(new GridLayout(6,4));
-		p4.setBackground(Color.RED);
-		p5 = new JPanel();
-		p7.add(p5,"Center");
-		p5.setLayout(new GridLayout(6,8));
-		p5.setBackground(Color.RED);
-		p6 = new JPanel();
-		p7.add(p6,"West");
-		p6.setLayout(new GridLayout(6,4));
-		p6.setBackground(Color.RED);*/
+		
 		int seat_i = 0;
 		int tmp = 0;
 		for(int j = 0; j<3; j++) {
@@ -124,51 +116,89 @@ public class SeatInfo extends JFrame {
 			for(int i = seat_i; i < tmp; i++ ) {
 				btn[i] = new JButton(icon);
 				btn[i].setPreferredSize(new Dimension(27, 28));
-				btn[i].setName("0"+seat_i);
+				btn[i].setName("0"+i);
 				btn[i].addActionListener(new MyActionListener()); //이벤트 리스너 인스턴스 생성
 			    seatPanel[j].add(btn[i]); //버튼을 프레임에 얹음
 			}
 			seat_i = tmp;
 		}
-		/*
-		for(int i =0; i<6*4; i++) {
-			btn[i] = new JButton(icon);
-			btn[i].setPreferredSize(new Dimension(28, 30));
-			//btn[i].setBounds(30,30,30,30);
-			//btn[i].setRolloverIcon(icon2);
-			btn[i].addActionListener(new MyActionListener()); //이벤트 리스너 인스턴스 생성
-		    p4.add(btn[i]); //버튼을 프레임에 얹음
-		}
-		for(int i = 6*4; i<6*8+6*4; i++) {
-			btn[i] = new JButton(icon);
-			btn[i].setPreferredSize(new Dimension(28, 30));
-			//btn[i].setBounds(30,30,30,30);
-			//btn[i].setRolloverIcon(icon2);
-			btn[i].addActionListener(new MyActionListener()); //이벤트 리스너 인스턴스 생성
-		    p5.add(btn[i]); //버튼을 프레임에 얹음
-		}
-		for(int i = 6*8+6*4; i<6*8+6*4+6*4; i++) {
-			btn[i] = new JButton(icon);
-			btn[i].setPreferredSize(new Dimension(28, 30));
-			//btn[i].setBounds(30,30,30,30);
-			//btn[i].setRolloverIcon(icon2);
-			btn[i].addActionListener(new MyActionListener()); //이벤트 리스너 인스턴스 생성
-		    p6.add(btn[i]); //버튼을 프레임에 얹음
-		}*/
-		/*p5 = new JPanel();
-		p3.add(p5);
-		p5.setLayout(new FlowLayout());
-		for(int i =seat_num/2; i<seat_num; i++) {
-			btn[i] = new JButton(icon);
-			btn[i].setPreferredSize(new Dimension(28, 30));
-			//btn[i].setBounds(30,30,30,30);
-			//btn[i].setRolloverIcon(icon2);
-			btn[i].addActionListener(new MyActionListener()); //이벤트 리스너 인스턴스 생성
-		    p5.add(btn[i]); //버튼을 프레임에 얹음
-		}
-		*/
+		
 	    setVisible(true);		//프레임을 보일지 설정
 	} 							// SeatInfo클래스 생성자 끝
+	public class select_dial extends JFrame {
+		 
+	    public select_dial() {
+	    	String movie_select = "";
+	    	int count =0;
+	    	Color crimson = new Color(0xFF4f55);
+	    	setTitle("영화를 부탁해");
+			setSize(500,500);
+	    	Container contentPane = getContentPane();
+	    	contentPane.setLayout(new BorderLayout(0,0));
+	    	JPanel P1 = new JPanel();
+	    	JPanel P2 = new JPanel();
+	    	P1.setLayout(new FlowLayout(FlowLayout.CENTER,40,100));
+	    	P2.setLayout(new FlowLayout(FlowLayout.CENTER,40,50));
+	    	add(P2,"North");
+	    	add(P1,"Center");
+	    	for (JButton A : selected_but) {
+	    		movie_select += (A.getName()).substring(1) + " ";
+	    		System.out.println(movie_select);
+	    		count++;
+	    	}
+	    	JLabel L1 = new JLabel("총 인원 "+count+"명 "+ movie_select +"자리로 선택하시겠습니까?");
+	    	L1.setFont(new Font("닉스곤체 B 2.0",Font.PLAIN, 18));
+	    	P2.add(L1,"North");
+	    	JButton btn = new JButton("네");
+	    	btn.setBackground(crimson);
+	    	
+			btn.setPreferredSize(new Dimension(90, 30));
+			btn.addActionListener(new SelectListener()); //이벤트 리스너 인스턴스 생성
+		    P1.add(btn); //버튼을 프레임에 얹음
+		    
+		    JButton btn1 = new JButton("아니요");
+		    btn1.setBackground(crimson);
+			btn1.setPreferredSize(new Dimension(90, 30));
+			btn1.addActionListener(new SelectListener()); //이벤트 리스너 인스턴스 생성
+		    P1.add(btn1); //버튼을 프레임에 얹음
+	    	
+	        
+	        setLocation(100, 100);
+	        setVisible(true);
+	 
+	    }
+	    class SelectListener implements ActionListener {
+			public void actionPerformed(ActionEvent e) {
+				JButton b = (JButton)e.getSource(); 
+				ImageIcon icon = new ImageIcon("Please_Movie/Please_Movie/src/image/seat.jpg");
+				//사용자가 어떤 버튼을 눌렀는지 알아내기
+				String tmp = b.getText();
+				if(tmp.equals("네")) {	
+					dispose();
+					for(JButton A : selected_but) {
+						String temp = (A.getName()).substring(1);
+						A.setName("0"+temp);
+						A.setIcon(new ImageIcon("Please_Movie/Please_Movie/src/image/can_seat.jpg"));
+					}
+					selected_but.clear();
+					num = 0;
+					new MobileTicket();
+				}
+				else {
+					for(JButton A : selected_but) {
+						String temp = (A.getName()).substring(1);
+						A.setName("0"+temp);
+						A.setIcon(new ImageIcon("Please_Movie/Please_Movie/src/image/can_seat.jpg"));
+					}
+					selected_but.clear();
+					num = 0;
+					dispose();
+				}
+				
+			}
+		}
+	 
+	}
 	public class DialogTest extends JFrame {
 		 
 	    public DialogTest() {
@@ -192,47 +222,8 @@ public class SeatInfo extends JFrame {
 	 
 	}
 	 
-	public class select_dial extends JFrame {
-		 
-	    public select_dial() {
-	    	setTitle("영화를 부탁해");
-			setSize(200,200);
-	    	Container contentPane = getContentPane();
-	    	contentPane.setLayout(new FlowLayout());
-	    	JButton btn = new JButton();
-	    	
-			btn.setPreferredSize(new Dimension(50, 30));
-			btn.setName("네");
-			btn.addActionListener(new SelectListener()); //이벤트 리스너 인스턴스 생성
-		    contentPane.add(btn); //버튼을 프레임에 얹음
-		    JButton btn1 = new JButton();
-	    	
-			btn1.setPreferredSize(new Dimension(50, 30));
-			btn1.setName("아니오");
-			btn1.addActionListener(new SelectListener()); //이벤트 리스너 인스턴스 생성
-		    contentPane.add(btn1); //버튼을 프레임에 얹음
-	    	
-	        
-	        setLocation(100, 100);
-	        setVisible(true);
-	 
-	    }
-	 
-	}
-	class SelectListener implements ActionListener {
-		public void actionPerformed(ActionEvent e) {
-			JButton b = (JButton)e.getSource(); 
-			//사용자가 어떤 버튼을 눌렀는지 알아내기
-			String tmp = b.getName();
-			if(tmp.equals("네")) {	
-				new MobileTicket();
-			}
-			else {
-				dismiss();
-			}
-			
-		}
-	}
+
+	
 	class MyActionListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			JButton b = (JButton)e.getSource();  //사용자가 특정 버튼을 action 했을 때 , 그 버튼을 b라는 다른 버튼 인스턴스에 복사 
@@ -246,12 +237,16 @@ public class SeatInfo extends JFrame {
 					b.setName("1".concat(tmp.substring(1)));
 					b.setIcon(new ImageIcon("Please_Movie/Please_Movie/src/image/seat.jpg"));
 					System.out.println("change cannot");
+					selected_but.add(b);
+					System.out.println(b.getName());
 					num++;
 				}
 				else {
 					b.setName("0".concat(tmp.substring(1)));
 					b.setIcon(new ImageIcon("Please_Movie/Please_Movie/src/image/can_seat.jpg"));
 					System.out.println("change can");
+					selected_but.remove(b);
+					if (num > 0)
 					num--;
 				}
 
