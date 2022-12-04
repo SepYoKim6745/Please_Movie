@@ -9,7 +9,6 @@ public class ReserveInfo {
 	//�޼ҵ�
 	public ReserveInfo(int manCount,int charge, String selectedseat) {
 		this.charge = charge;
-		this.manCount = manCount;
 		this.selectedseat = selectedseat;
 	}
 	public void setCharge(int charge) { //�ݾ� �Է� �Լ�

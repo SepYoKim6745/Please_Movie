@@ -1,4 +1,5 @@
 package Display;
+import Display.SeatInfo;
 import Please_Movie.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -20,7 +21,7 @@ class MyDialog extends JDialog{
 	int select;
 	public MyDialog(JFrame frame, String title, String location, String brand, String time){
 		super(frame, title);
-		String[] people = {"1명", "2명", "3명"};
+		String[] people = {"1명", "2명", "3명","4명"};
 		this.location = location;
 		this.brand = brand;
 		this.time = time;
@@ -53,6 +54,7 @@ class MyDialog extends JDialog{
 		JLabel br  = new JLabel("<html> <br><br><br><br><br><br><br><br><br><br><br><br></html>");
 		//JLabel saleTimePart = new JLabel("<html>- 군인<br><br>- 국가유공자<br><br>- 어린이<br><br></html>");
 		String selectPeople = peopleComboBox.getSelectedItem().toString();
+		System.out.print(selectPeople);
 		selectPeople = selectPeople.substring(0, 1);
 		select = Integer.parseInt(selectPeople);
 		job.setFont(titleFont);
@@ -70,13 +72,15 @@ class MyDialog extends JDialog{
 		footer.setLayout(new FlowLayout(FlowLayout.RIGHT, 30,0));
 		this.add(footer, "South");
 		JButton nextButton = new JButton("좌석 선택하기");
+		nextButton.addActionListener(new nextButton());
 		footer.add(nextButton);
 		
 	}
 	class nextButton implements ActionListener{
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			ShowInfoFunc selectData = new ShowInfoFunc(select);
+			System.out.print(select);
+			SeatInfo selectData = new SeatInfo();
 			setVisible(false);
 		}
 		
@@ -178,15 +182,11 @@ public class Choose extends JFrame{
 		
 		imgLabel3.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
-				new SeatInfo();
-				setVisible(false);
 				dialog.setVisible(true);
 			}
 		});
 		thaterInfo3.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
-				new SeatInfo();
-				setVisible(false);
 				dialog.setVisible(true);
 			}
 		});
