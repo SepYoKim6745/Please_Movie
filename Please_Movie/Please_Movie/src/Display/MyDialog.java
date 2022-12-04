@@ -14,8 +14,10 @@ public class MyDialog extends JDialog{
 	String selectPeople;
 	JComboBox peopleComboBox;
 	int select;
+	JFrame frame;
 	public MyDialog(JFrame frame, String title, String location, String brand, String time){
 		super(frame, title);
+		this.frame = frame;
 		String[] people = {"1명", "2명", "3명","4명"};
 		this.location = location;
 		this.brand = brand;
@@ -73,8 +75,9 @@ public class MyDialog extends JDialog{
 			selectPeople = peopleComboBox.getSelectedItem().toString();
 			selectPeople = selectPeople.substring(0, 1);
 			select = Integer.parseInt(selectPeople);
-			setVisible(false);
 			SeatInfo selectData = new SeatInfo(select);
+			setVisible(false);
+			frame.setVisible(false);
 		}
 	}
 }

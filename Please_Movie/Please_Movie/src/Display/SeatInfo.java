@@ -181,7 +181,7 @@ public class SeatInfo extends JFrame {
 	    	
 			btn.setPreferredSize(new Dimension(90, 30));
 			btn.addActionListener(new MobileTicketAction()); //이벤트 리스너 인스턴스 생성
-			btn.addActionListener(new DialCutListener()); //이벤트 리스너 인스턴스 생성
+			btn.addActionListener(new SelectListener()); //이벤트 리스너 인스턴스 생성
 		    P1.add(btn); //버튼을 프레임에 얹음
 		    
 		    JButton btn1 = new JButton("아니요");
@@ -212,6 +212,7 @@ public class SeatInfo extends JFrame {
 					}
 					selected_but.clear();
 					num = 0;
+					setVisible(false);
 					dispose();
 				}
 				else {
@@ -222,6 +223,7 @@ public class SeatInfo extends JFrame {
 					}
 					selected_but.clear();
 					num = 0;
+					setVisible(false);
 					dispose();
 				}
 				

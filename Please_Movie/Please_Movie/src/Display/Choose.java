@@ -55,7 +55,6 @@ public class Choose extends JFrame{
 		// new Actio
 		imgLabel.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
-				setVisible(false);
 				dialog.setVisible(true);
 			}
 		});
