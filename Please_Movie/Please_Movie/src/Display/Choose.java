@@ -116,14 +116,12 @@ public class Choose extends JFrame{
 		
 		imgLabel.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
-				//new Setting();
 				dialog.setVisible(true);
 			}
 		});
 		
 		thaterInfo.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
-				//new Setting();
 				dialog.setVisible(true);
 			}
 		});
@@ -140,15 +138,13 @@ public class Choose extends JFrame{
 		
 		imgLabel2.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
-				new Setting();
-				setVisible(false);
+				dialog.setVisible(true);
 			}
 		});
 		
 		thaterInfo2.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
-				new Setting();
-				setVisible(false);
+				dialog.setVisible(true);
 			}
 		});
 		
@@ -163,15 +159,13 @@ public class Choose extends JFrame{
 		
 		imgLabel3.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
-				new Setting();
-				setVisible(false);
+				dialog.setVisible(true);
 			}
 		});
 		
 		thaterInfo3.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
-				new Setting();
-				setVisible(false);
+				dialog.setVisible(true);
 			}
 		});
 		
@@ -186,15 +180,13 @@ public class Choose extends JFrame{
 		
 		imgLabel4.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
-				new Setting();
-				setVisible(false);
+				dialog.setVisible(true);
 			}
 		});
 		
 		thaterInfo4.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
-				new Setting();
-				setVisible(false);
+				dialog.setVisible(true);
 			}
 		});
 		
@@ -208,42 +200,15 @@ public class Choose extends JFrame{
 		
 		imgLabel5.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
-				new Setting();
-				setVisible(false);
+				dialog.setVisible(true);
 			}
 		});
 		
 		thaterInfo5.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
-				new Setting();
-				setVisible(false);
+				dialog.setVisible(true);
 			}
 		});
-		
-		
-//		JLabel imgLabel6 = new JLabel();
-//		ImageIcon moviePoster6 = new ImageIcon(movieUrl);
-//		img = moviePoster.getImage();
-//		updateImg = img.getScaledInstance(90, 120, Image.SCALE_SMOOTH);
-//		updateIcon = new ImageIcon(updateImg);
-//		imgLabel6.setIcon(updateIcon);
-//		JLabel thaterInfo6 = new JLabel("CGV - 천안 신부점 / 22:20 상영관: 8관 / 잔여 좌석: 15석 / 거 리 : 240M");
-		
-//		JLabel imgLabelArr[] = new JLabel[8];
-//		ImageIcon moviePosterArr[] = new ImageIcon[8];
-//		JLabel thaterInfoArr[] = new JLabel[8];
-//		for(int i = 0; i < 8; i++) {
-//			moviePosterArr[i] = new ImageIcon(movieUrl);
-//			img = moviePosterArr[i].getImage();
-//			updateImg = img.getScaledInstance(90, 120, Image.SCALE_SMOOTH);
-//			updateIcon = new ImageIcon(updateImg);
-//			imgLabelArr[i].setIcon(updateIcon);
-//			thaterInfoArr[i] = new JLabel("CGV - 천안 신부점 / 22:20 상영관: 8관 / 잔여 좌석: 15석 / 거 리 : 240M");
-//			
-//		}
-		
-		
-        //imgLabel.setBounds(0, 0, 0, 0);
 		JPanel filterPanel = new JPanel();
 		filterPanel.setLayout(new FlowLayout(FlowLayout.LEFT,80,10));
 		filterPanel.setBackground(Color.white);
@@ -269,12 +234,6 @@ public class Choose extends JFrame{
 		p1.add(thaterInfo4);
 		p1.add(imgLabel5);
 		p1.add(thaterInfo5);
-//		p1.add(imgLabel6);
-//		p1.add(thaterInfo6);
-//		for(int i = 0; i < 8; i++) {
-//			p1.add(imgLabelArr[i]);
-//			p1.add(thaterInfoArr[i]);
-//		}
 		
 		
 		//메뉴바 생성 
@@ -312,7 +271,7 @@ public class Choose extends JFrame{
 	class BackMenuAction implements ActionListener{
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			new MovieList();
+			new MovieInfo(movieUrl);
 			setVisible(false);
 		}
 		

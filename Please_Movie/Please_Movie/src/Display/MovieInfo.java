@@ -12,7 +12,7 @@ public class MovieInfo extends JFrame {
 		JButton[] NVButtons = new JButton[3];
 		ImageIcon[] bar = new ImageIcon[3];
 		JPanel p1, p2;
-        System.out.println(posterAddress.substring(29, 30));
+        //System.out.println(posterAddress.substring(29, 30));
         int movieNum = Integer.parseInt(posterAddress.substring(29, 30));
 
 		Color crimson = new Color(0xFF4f55);
@@ -124,7 +124,6 @@ public class MovieInfo extends JFrame {
 		public void actionPerformed(ActionEvent e) {
 			JButton btnVal = (JButton) e.getSource();
 			new Choose(btnVal.getName());
-			System.out.print(btnVal.getName());
 			setVisible(false);
 		}
     }
