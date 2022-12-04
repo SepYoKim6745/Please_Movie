@@ -24,14 +24,14 @@ public class MovieList extends JFrame{
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		for(int i = 0; i<poster.length;i++) {
-			poster[i] = new ImageIcon("Please_Movie/Please_Movie/src/image/poster"+(i+1)+".jpg");
+			poster[i] = new ImageIcon("Please_Movie/src/image/poster"+(i+1)+".jpg");
 			Image posterImage = poster[i].getImage();
 			Image changeImg = posterImage.getScaledInstance(150,200,Image.SCALE_SMOOTH);
 			poster[i] = new ImageIcon(changeImg);
 		}
 		
 		for(int i = 0; i<bar.length;i++) {
-			bar[i] = new ImageIcon("Please_Movie/Please_Movie/src/image/Bar"+(i+1)+".jpg");
+			bar[i] = new ImageIcon("Please_Movie/src/image/Bar"+(i+1)+".jpg");
 			Image barimage = bar[i].getImage();
 			Image changeImg = barimage.getScaledInstance(60,40,Image.SCALE_SMOOTH);
 			bar[i] = new ImageIcon(changeImg);
@@ -70,13 +70,12 @@ public class MovieList extends JFrame{
 		
 		for(int i = 0; i<MVButtons.length; i++) {
 			MVButtons[i] = new JButton(poster[i]);
-			MVButtons[i].setName("Please_Movie/Please_Movie/src/image/poster"+(i+1)+".jpg");
+			MVButtons[i].setName("Please_Movie/src/image/poster"+(i+1)+".jpg");
 			MVButtons[i].setPreferredSize(new Dimension(150,200));
 			p1.add(MVButtons[i]);
 			MVButtons[i].addActionListener(new MyActionListener());
 		}
 
-		
 		NVButtons[0].addActionListener(new HomeAction()); // �솃�솕硫� �븸�뀡 由ъ뒪�꼫
 		NVButtons[1].addActionListener(new MobileTicketAction()); // 紐⑤컮�씪�떚耳� �븸�뀡 由ъ뒪�꼫
 		NVButtons[2].addActionListener(new SettingAction()); // setting �븸�뀡 由ъ뒪�꼫
@@ -91,14 +90,8 @@ public class MovieList extends JFrame{
 		public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
 			JButton btnVal = (JButton) e.getSource();
-<<<<<<< HEAD
 			System.out.print(btnVal.getName());
 			new MovieInfo(btnVal.getName());
-=======
-			String path = System.getProperty("user.dir");
-		      System.out.println("Working Directory = " + path);
-			new Choose(btnVal.getName());
->>>>>>> c39aed3eb9605d36716ed0ca52814df032a6d33b
 			setVisible(false);
 		}	
 	}

@@ -12,8 +12,8 @@ public class MovieInfo extends JFrame {
 		JButton[] NVButtons = new JButton[3];
 		ImageIcon[] bar = new ImageIcon[3];
 		JPanel p1, p2;
-        System.out.println(posterAddress.substring(42, 43));
-        int movieNum = Integer.parseInt(posterAddress.substring(42, 43));
+        System.out.println(posterAddress.substring(29, 30));
+        int movieNum = Integer.parseInt(posterAddress.substring(29, 30));
 
 		Color crimson = new Color(0xFF4f55);
 		Color brightGray = new Color(0xbebebe);
@@ -22,7 +22,7 @@ public class MovieInfo extends JFrame {
 		setSize(600, 900);
 
 		for(int i = 0; i<bar.length;i++) {
-			bar[i] = new ImageIcon("Please_Movie/Please_Movie/src/image/Bar"+(i+1)+".jpg");
+			bar[i] = new ImageIcon("Please_Movie/src/image/Bar"+(i+1)+".jpg");
 			Image barimage = bar[i].getImage();
 			Image changeImg = barimage.getScaledInstance(60,40,Image.SCALE_SMOOTH);
 			bar[i] = new ImageIcon(changeImg);
@@ -48,7 +48,6 @@ public class MovieInfo extends JFrame {
 		add(p2, "South");
 		
 		// p1.add(appVersion);
-<<<<<<< HEAD
         p1.setBackground(Color.WHITE);
         p1.setLayout(null);
         //포스터 이미지
@@ -58,7 +57,7 @@ public class MovieInfo extends JFrame {
         ImageIcon PosterImg = new ImageIcon(tmpImage);
         JLabel pImg = new JLabel(PosterImg);
         //비디오 이미지
-        ImageIcon Video = new ImageIcon("Please_Movie/Please_Movie/src/image/video.jpg");
+        ImageIcon Video = new ImageIcon("Please_Movie/src/image/video.jpg");
         tmpImage = Video.getImage();
         tmpImage = tmpImage.getScaledInstance(470,270,Image.SCALE_SMOOTH);
         ImageIcon VideoImg = new ImageIcon(tmpImage);
@@ -98,9 +97,6 @@ public class MovieInfo extends JFrame {
         p1.add(ItisStory);
         p1.add(StoryPane);
         p1.add(toChoose);
-=======
-        //p1.setLayout(D);
->>>>>>> c39aed3eb9605d36716ed0ca52814df032a6d33b
 		//p1 end
 		
 		//p2 : nav

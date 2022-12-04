@@ -21,7 +21,7 @@ public class Setting extends JFrame {
 		setSize(600, 900);
 
 		for(int i = 0; i<bar.length;i++) {
-			bar[i] = new ImageIcon("Please_Movie/Please_Movie/src/image/Bar"+(i+1)+".jpg");
+			bar[i] = new ImageIcon("Please_Movie/src/image/Bar"+(i+1)+".jpg");
 			Image barimage = bar[i].getImage();
 			Image changeImg = barimage.getScaledInstance(60,40,Image.SCALE_SMOOTH);
 			bar[i] = new ImageIcon(changeImg);
@@ -51,7 +51,7 @@ public class Setting extends JFrame {
 		//p1 : main
 		p1.setLayout(new FlowLayout(FlowLayout.LEFT,20,20));
 		p1.setBackground(Color.white);
-		ImageIcon um = new ImageIcon("Please_Movie/Please_Movie/src/image/userlocation.jpg");
+		ImageIcon um = new ImageIcon("Please_Movie/src/image/userlocation.jpg");
 
 		Box appInfo = new Box(BoxLayout.Y_AXIS);
 		JLabel appVersion = new JLabel("APP Info");
