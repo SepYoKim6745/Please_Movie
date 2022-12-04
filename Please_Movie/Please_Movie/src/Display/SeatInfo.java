@@ -7,12 +7,14 @@ import java.util.ArrayList;
 
 public class SeatInfo extends JFrame {
 	int num =0;
+	public static int mancount;
 	boolean op_sw = false;
 	//JButton [] seleted_but = new JButton[4];
 	ArrayList <JButton> selected_but = new ArrayList<JButton>();
-	public SeatInfo() {							// SeatInfo클래스 생성자 시작
+	public SeatInfo(int people) {							// SeatInfo클래스 생성자 시작
 		/////////////////////////   기본 네비게이션바, 뒤로가기 버튼 , 후면 레이아웃   /////////////////////////////////////////////////////////////////////////////
-		
+		//this.mancount = people;
+		mancount = people;
 		JButton[] NVButtons = new JButton[3];
 		ImageIcon[] bar = new ImageIcon[3];
 		JPanel p1,p2, p3, p4, p5, p6 ,p7;
@@ -119,6 +121,7 @@ public class SeatInfo extends JFrame {
 				btn[i].setName("0"+i);
 				btn[i].addActionListener(new MyActionListener()); //이벤트 리스너 인스턴스 생성
 			    seatPanel[j].add(btn[i]); //버튼을 프레임에 얹음
+				btn[i].setBackground(Color.WHITE);
 			}
 			seat_i = tmp;
 		}
@@ -170,15 +173,14 @@ public class SeatInfo extends JFrame {
 	    class SelectListener implements ActionListener {
 			public void actionPerformed(ActionEvent e) {
 				JButton b = (JButton)e.getSource(); 
-				ImageIcon icon = new ImageIcon("Please_Movie/Please_Movie/src/image/seat.jpg");
 				//사용자가 어떤 버튼을 눌렀는지 알아내기
 				String tmp = b.getText();
 				if(tmp.equals("네")) {	
 					dispose();
 					for(JButton A : selected_but) {
+						// A.setBackground(null);
 						String temp = (A.getName()).substring(1);
 						A.setName("0"+temp);
-						A.setIcon(new ImageIcon("Please_Movie/Please_Movie/src/image/can_seat.jpg"));
 					}
 					selected_but.clear();
 					num = 0;
@@ -186,9 +188,9 @@ public class SeatInfo extends JFrame {
 				}
 				else {
 					for(JButton A : selected_but) {
+						A.setBackground(Color.WHITE);
 						String temp = (A.getName()).substring(1);
 						A.setName("0"+temp);
-						A.setIcon(new ImageIcon("Please_Movie/Please_Movie/src/image/can_seat.jpg"));
 					}
 					selected_but.clear();
 					num = 0;
@@ -235,7 +237,7 @@ public class SeatInfo extends JFrame {
 			else {
 				if(tmp.charAt(0) == '0') {	//버튼 b의 텍스트가 "Action"인지 비교 	
 					b.setName("1".concat(tmp.substring(1)));
-					b.setIcon(new ImageIcon("Please_Movie/Please_Movie/src/image/seat.jpg"));
+					b.setBackground(new Color(0xFF4f55));
 					System.out.println("change cannot");
 					selected_but.add(b);
 					System.out.println(b.getName());
@@ -243,14 +245,14 @@ public class SeatInfo extends JFrame {
 				}
 				else {
 					b.setName("0".concat(tmp.substring(1)));
-					b.setIcon(new ImageIcon("Please_Movie/Please_Movie/src/image/can_seat.jpg"));
+					b.setBackground(null);
 					System.out.println("change can");
 					selected_but.remove(b);
 					if (num > 0)
 					num--;
 				}
 
-				if(num==4) {
+				if(num==mancount) {
 					num = 0;
 					new select_dial();
 				}
@@ -288,7 +290,6 @@ public class SeatInfo extends JFrame {
 		}
 
 	}
-
 	class HomeAction implements ActionListener{
 		@Override
 		public void actionPerformed(ActionEvent e) {
@@ -297,7 +298,6 @@ public class SeatInfo extends JFrame {
 		}
 
 	}
-
 	class MobileTicketAction implements ActionListener{
 		@Override
 		public void actionPerformed(ActionEvent e) {
