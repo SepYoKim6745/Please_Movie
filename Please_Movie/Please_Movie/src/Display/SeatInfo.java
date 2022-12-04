@@ -129,14 +129,14 @@ public class SeatInfo extends JFrame {
 					int n = i - 24;
 					seat_number += (char)((n / 8) + 65);
 					seat_number += "열";
-					seat_number += Integer.toString((n % 4)+1);
+					seat_number += Integer.toString((n % 4)+5);
 					seat_number += "번";
 				}
 				else if(i < 96) {
 					int k = i - 72;
 					seat_number += (char)((k / 4) + 65);
 					seat_number += "열";
-					seat_number += Integer.toString((k % 4)+1);
+					seat_number += Integer.toString((k % 4)+13);
 					seat_number += "번";
 				}
 				btn[i].setName("0"+ seat_number);
@@ -157,7 +157,7 @@ public class SeatInfo extends JFrame {
 	    	int count =0;
 	    	Color crimson = new Color(0xFF4f55);
 	    	setTitle("영화를 부탁해");
-			setSize(500,500);
+			setSize(660,600);
 	    	Container contentPane = getContentPane();
 	    	contentPane.setLayout(new BorderLayout(0,0));
 	    	JPanel P1 = new JPanel();
@@ -167,13 +167,13 @@ public class SeatInfo extends JFrame {
 	    	add(P2,"North");
 	    	add(P1,"Center");
 	    	for (JButton A : selected_but) {
-	    		movie_select +=A.getName() + " ";
+	    		movie_select += A.getName().substring(1) + " ";
 				
 	    		System.out.println(movie_select);
 	    		count++;
 	    	}
 			
-	    	JLabel L1 = new JLabel("총 인원 "+count+"명 "+ movie_select.substring(1) +"자리로 선택하시겠습니까?");
+	    	JLabel L1 = new JLabel("총 인원 "+count+"명 "+ movie_select +"자리로 선택하시겠습니까?");
 	    	L1.setFont(new Font("닉스곤체 B 2.0",Font.PLAIN, 18));
 	    	P2.add(L1,"North");
 	    	JButton btn = new JButton("네");
@@ -188,7 +188,7 @@ public class SeatInfo extends JFrame {
 		    btn1.setBackground(crimson);
 			btn1.setPreferredSize(new Dimension(90, 30));
 			
-			btn.addActionListener(new SelectListener()); //이벤트 리스너 인스턴스 생성
+			btn1.addActionListener(new SelectListener()); //이벤트 리스너 인스턴스 생성
 			
 		    P1.add(btn1); //버튼을 프레임에 얹음
 	    	

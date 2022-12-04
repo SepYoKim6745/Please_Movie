@@ -76,7 +76,7 @@ public class MovieInfo extends JFrame {
 		//줄거리
         String story = "들어보라, 청춘의 피는 끓는다. 끓는 피에 뛰노는 심장은 거선의 기관과 같이 힘있다. 이것이다...";
         JLabel ItisStory = new JLabel("<html>줄거리</html>");
-		ItisStory.setFont(new Font("닉스곤체 B 2.0",Font.PLAIN, 30));
+		ItisStory.setFont(new Font("닉스곤체 L 2.0",Font.PLAIN, 30));
         JTextPane StoryPane = new JTextPane();
 		StoryPane.setFont(MainFrame.lightone);
 		StoryPane.setText(story);
