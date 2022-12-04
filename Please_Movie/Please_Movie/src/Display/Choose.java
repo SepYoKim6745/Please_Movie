@@ -12,6 +12,7 @@ import javax.swing.*;
 
 import Display.MovieInfo.BackMenuAction;
 import Display.MovieList.MyActionListener;
+
 class MyDialog extends JDialog{
 	String location;
 	String brand;

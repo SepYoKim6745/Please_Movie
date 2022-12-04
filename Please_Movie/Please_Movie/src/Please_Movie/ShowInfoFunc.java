@@ -8,7 +8,7 @@ public class ShowInfoFunc extends Theater{
 	private int leftSeat;
 	private int total;
 	private int people;
-	
+	//
 	public ShowInfoFunc(int p) {
 		//movieInfo에서 정보를 모두 가져옴  파일을 읽어옴
 		people = p;
