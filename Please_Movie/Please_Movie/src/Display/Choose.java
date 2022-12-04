@@ -10,6 +10,7 @@ import java.util.*;
 
 import javax.swing.*;
 
+import Display.MovieInfo.BackMenuAction;
 import Display.MovieList.MyActionListener;
 class MyDialog extends JDialog{
 	String location;
@@ -254,11 +255,11 @@ public class Choose extends JFrame{
 		//메뉴바 생성 
 		JMenuBar mb = new JMenuBar();
 		mb.setBackground(crimson);
-		ImageIcon backButtonImage = new ImageIcon();
-		
-		//뒤로가기 버튼 생성 
-		backButtonImage = new ImageIcon("");
-		JButton backButton = new JButton("<<---");
+		ImageIcon arrow = new ImageIcon("src/image/arrow.png");
+		Image arrowImage = arrow.getImage();
+		arrowImage = arrowImage.getScaledInstance(50,20,Image.SCALE_SMOOTH);
+		ImageIcon aRrow = new ImageIcon(arrowImage);
+		JButton backButton = new JButton(aRrow);
 		backButton.addActionListener(new BackMenuAction());
 		backButton.setBackground(crimson);
 		mb.add(backButton);

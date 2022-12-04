@@ -34,8 +34,11 @@ public class MovieInfo extends JFrame {
 		//mb : top menu
 		JMenuBar mb = new JMenuBar(); //top
 		mb.setBackground(crimson);
-
-		JButton backButton = new JButton("<<---");
+		ImageIcon arrow = new ImageIcon("src/image/arrow.png");
+		Image arrowImage = arrow.getImage();
+		arrowImage = arrowImage.getScaledInstance(50,20,Image.SCALE_SMOOTH);
+		ImageIcon aRrow = new ImageIcon(arrowImage);
+		JButton backButton = new JButton(aRrow);
 		backButton.addActionListener(new BackMenuAction());
 		backButton.setBackground(crimson);
 		mb.add(backButton);

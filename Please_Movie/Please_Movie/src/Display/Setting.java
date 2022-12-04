@@ -36,11 +36,10 @@ public class Setting extends JFrame {
 		ImageIcon backButtonImage = new ImageIcon();
 		backButtonImage = new ImageIcon("");
 
-		JButton backButton = new JButton("<<---");
-		backButton.addActionListener(new BackMenuAction());
-		backButton.setBackground(crimson);
-		mb.add(backButton);
-		add(mb, "North");
+		JLabel la = new JLabel("Home");
+		la.setFont(new Font("닉스곤체 B 2.0",Font.PLAIN, 25));
+		mb.add(la);
+		add(mb,"North");
 		//mb end
 
 		p1 = new JPanel();
