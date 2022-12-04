@@ -11,6 +11,7 @@ public class MainFrame {
 	public static Font boldone = new Font("닉스곤체 B 2.0",Font.PLAIN, 50);
 	public static Font nomone = new Font("닉스곤체 M 2.0",Font.PLAIN, 30);
 	public static Font lightone = new Font("닉스곤체 L 2.0",Font.PLAIN, 20);
+
 	public int page = 0;
 	public static void main(String[] args) {
 		movieListDisplay();
