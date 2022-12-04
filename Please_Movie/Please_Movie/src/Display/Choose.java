@@ -24,7 +24,7 @@ class MyDialog extends JDialog{
 		this.setLayout(new BorderLayout());
 		this.setSize(500, 600);
 		JPanel p1 = new JPanel();
-		p1.setLayout(new FlowLayout());
+		p1.setLayout(new FlowLayout(FlowLayout.LEFT, 30, 30));
 		this.add(p1,"North");
 		JLabel info = new JLabel(location + brand + "/" +time);
 		Font titleFont = new Font("굴림", Font.BOLD, 25);
@@ -34,9 +34,32 @@ class MyDialog extends JDialog{
 		JPanel centerPanel = new JPanel();
 		centerPanel.setLayout(new BorderLayout());
 		this.add(centerPanel,"Center");
-		JLabel subInfo = new JLabel("<html><br><br>상영관 : 8관 <br> 잔여 좌석 : 15</html>");
+		JLabel subInfo = new JLabel("<html>상영관 : 8관 <br> 잔여 좌석 : 15<br><br><br><br></html>");
+		JPanel subNorthPanel = new JPanel();
+		subNorthPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 30, 0));
+		centerPanel.add(subNorthPanel,"North");
 		subInfo.setForeground(Color.gray);
-		centerPanel.add(subInfo, "North");
+		subNorthPanel.add(subInfo);
+		JPanel centerContent = new JPanel();
+		centerContent.setLayout(new FlowLayout(FlowLayout.LEFT, 60,0));
+		centerPanel.add(centerContent, "Center");
+		JLabel job = new JLabel("<html>직업 <br></html>");
+		JLabel job_detail = new JLabel("<html>- 군인<br><br>- 국가유공자<br><br>- 어린이<br><br></html>");
+		//JLabel saleTime  = new JLabel("<html>직업 <br></html>");
+		//JLabel saleTimePart = new JLabel("<html>- 군인<br><br>- 국가유공자<br><br>- 어린이<br><br></html>");
+		job.setFont(titleFont);
+		job.setForeground(Color.gray);
+		//saleTime.setFont(titleFont);
+		//saleTime.setForeground(Color.gray);
+		centerContent.add(job);
+		centerContent.add(job_detail);
+		//centerContent.add(saleTime);
+		//centerContent.add(saleTimePart);
+		JPanel footer = new JPanel();
+		footer.setLayout(new FlowLayout(FlowLayout.RIGHT, 30,0));
+		this.add(footer, "South");
+		JButton nextButton = new JButton("좌석 선택하기");
+		footer.add(nextButton);
 		
 	}
 }
