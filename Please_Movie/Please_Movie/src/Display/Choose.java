@@ -140,14 +140,14 @@ public class Choose extends JFrame{
 		
 		imgLabel3.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
-				new Setting();
+				new SeatInfo();
 				setVisible(false);
 			}
 		});
 		
 		thaterInfo3.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
-				new Setting();
+				new SeatInfo();
 				setVisible(false);
 			}
 		});
