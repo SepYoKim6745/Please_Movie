@@ -25,7 +25,7 @@ class MyDialog extends JDialog{
 		this.brand = brand;
 		this.time = time;
 		this.setLayout(new BorderLayout());
-		this.setSize(500, 600);
+		this.setSize(400, 600);
 		JPanel p1 = new JPanel();
 		p1.setLayout(new FlowLayout(FlowLayout.LEFT, 30, 30));
 		this.add(p1,"North");
