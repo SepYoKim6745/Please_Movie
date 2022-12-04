@@ -81,7 +81,7 @@ class MyDialog extends JDialog{
 			selectPeople = selectPeople.substring(0, 1);
 			select = Integer.parseInt(selectPeople);
 			System.out.print(select);
-			SeatInfo selectData = new SeatInfo();
+			SeatInfo selectData = new SeatInfo(select);
 			setVisible(false);
 		}
 		
