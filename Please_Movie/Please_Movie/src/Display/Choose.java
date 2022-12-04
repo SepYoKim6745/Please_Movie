@@ -80,8 +80,7 @@ class MyDialog extends JDialog{
 			selectPeople = peopleComboBox.getSelectedItem().toString();
 			selectPeople = selectPeople.substring(0, 1);
 			select = Integer.parseInt(selectPeople);
-			System.out.print("zz");
-			SeatInfo selectData = new SeatInfo();
+			SeatInfo selectData = new SeatInfo(select);
 			setVisible(false);
 		}
 		
