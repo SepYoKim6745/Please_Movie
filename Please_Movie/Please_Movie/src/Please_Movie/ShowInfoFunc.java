@@ -1,15 +1,18 @@
 package Please_Movie;
 
-public class ShowInfo extends Theater{
+public class ShowInfoFunc extends Theater{
 	private Movie movie;
 	private int showTime;
 	private String type;
 	private String roomNumber;
 	private int leftSeat;
 	private int total;
+	private int people;
 	
-	public ShowInfo() {
+	public ShowInfoFunc(int p) {
 		//movieInfo에서 정보를 모두 가져옴  파일을 읽어옴
+		people = p;
+		
 	}
 	public Movie getMovie() {
 		return movie;

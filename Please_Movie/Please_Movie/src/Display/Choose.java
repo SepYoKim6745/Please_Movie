@@ -11,13 +11,14 @@ import java.util.*;
 import javax.swing.*;
 
 import Display.MovieList.MyActionListener;
-
 class MyDialog extends JDialog{
 	String location;
 	String brand;
 	String time;
+	int select;
 	public MyDialog(JFrame frame, String title, String location, String brand, String time){
 		super(frame, title);
+		String[] people = {"1명", "2명", "3명"};
 		this.location = location;
 		this.brand = brand;
 		this.time = time;
@@ -41,18 +42,24 @@ class MyDialog extends JDialog{
 		subInfo.setForeground(Color.gray);
 		subNorthPanel.add(subInfo);
 		JPanel centerContent = new JPanel();
-		centerContent.setLayout(new FlowLayout(FlowLayout.LEFT, 60,0));
+		centerContent.setLayout(new FlowLayout(FlowLayout.LEFT, 80,0));
 		centerPanel.add(centerContent, "Center");
 		JLabel job = new JLabel("<html>직업 <br></html>");
 		JLabel job_detail = new JLabel("<html>- 군인<br><br>- 국가유공자<br><br>- 어린이<br><br></html>");
-		//JLabel saleTime  = new JLabel("<html>직업 <br></html>");
+		JLabel saleTime  = new JLabel("<html>인원<br></html>");
+		JComboBox peopleComboBox = new JComboBox(people);
 		//JLabel saleTimePart = new JLabel("<html>- 군인<br><br>- 국가유공자<br><br>- 어린이<br><br></html>");
+		String selectPeople = peopleComboBox.getSelectedItem().toString();
+		selectPeople = selectPeople.substring(0, 1);
+		select = Integer.parseInt(selectPeople);
 		job.setFont(titleFont);
 		job.setForeground(Color.gray);
-		//saleTime.setFont(titleFont);
-		//saleTime.setForeground(Color.gray);
+		saleTime.setFont(titleFont);
+		saleTime.setForeground(Color.gray);
 		centerContent.add(job);
 		centerContent.add(job_detail);
+		centerContent.add(saleTime);
+		centerContent.add(peopleComboBox);
 		//centerContent.add(saleTime);
 		//centerContent.add(saleTimePart);
 		JPanel footer = new JPanel();
@@ -60,6 +67,14 @@ class MyDialog extends JDialog{
 		this.add(footer, "South");
 		JButton nextButton = new JButton("좌석 선택하기");
 		footer.add(nextButton);
+		
+	}
+	class nextButton implements ActionListener{
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			ShowInfoFunc selectData = new ShowInfoFunc(select);
+			setVisible(false);
+		}
 		
 	}
 }
