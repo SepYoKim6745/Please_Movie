@@ -78,41 +78,41 @@ public class MobileTicket extends JFrame{
 		
 		JLabel movieName = new JLabel("데시벨");
 		movieName.setBounds(230,50,200,50);
-		movieName.setFont(new Font("맑은고딕", Font.BOLD,30));
+		movieName.setFont(new Font("닉스곤체 B 2.0", Font.BOLD,30));
 		ticket.add(movieName);
 		
 		JLabel str1 = new JLabel("상영정보");
 		str1.setBounds(50,280,150,50);
-		str1.setFont(new Font("맑은고딕", Font.BOLD,30));
+		str1.setFont(new Font("닉스곤체 M 2.0", Font.BOLD,30));
 		ticket.add(str1);
 		
 		JLabel str2 = new JLabel("예매번호 : 123456789");
 		str2.setBounds(200,285,300,50);
-		str2.setFont(new Font("맑은고딕", Font.PLAIN,20));
+		str2.setFont(new Font("닉스곤체 M 2.0", Font.PLAIN,20));
 		str2.setForeground(gray1);
 		ticket.add(str2);
 		
 		JLabel str3 = new JLabel("CGV - 천안 신부점");
 		str3.setBounds(50,330,200,50);
-		str3.setFont(new Font("맑은고딕", Font.PLAIN,20));
+		str3.setFont(new Font("닉스곤체 M 2.0", Font.PLAIN,20));
 		str3.setForeground(gray1);
 		ticket.add(str3);
 		
 		JLabel str4 = new JLabel("상영관 : 8관 ");
 		str4.setBounds(50,360,200,50);
-		str4.setFont(new Font("맑은고딕", Font.PLAIN,20));
+		str4.setFont(new Font("닉스곤체 M 2.0", Font.PLAIN,20));
 		str4.setForeground(gray1);
 		ticket.add(str4);
 		
 		JLabel str5 = new JLabel("좌석 : A-1");
 		str5.setBounds(50,390,200,50);
-		str5.setFont(new Font("맑은고딕", Font.PLAIN,20));
+		str5.setFont(new Font("닉스곤체 M 2.0", Font.PLAIN,20));
 		str5.setForeground(gray1);
 		ticket.add(str5);
 		
 		JLabel str6 = new JLabel("상영 날짜/시간 : 2022-11-14 / 22:20");
 		str6.setBounds(50,420,500,50);
-		str6.setFont(new Font("맑은고딕", Font.PLAIN,20));
+		str6.setFont(new Font("닉스곤체 M 2.0", Font.PLAIN,20));
 		str6.setForeground(gray1);
 		ticket.add(str6);
 		

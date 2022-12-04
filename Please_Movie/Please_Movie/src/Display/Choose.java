@@ -178,23 +178,16 @@ public class Choose extends JFrame{
 		
 		imgLabel3.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
-<<<<<<< HEAD
 				new SeatInfo();
 				setVisible(false);
-=======
 				dialog.setVisible(true);
->>>>>>> branch 'master' of https://github.com/SepYoKim6745/Please_Movie.git
 			}
 		});
-		
 		thaterInfo3.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
-<<<<<<< HEAD
 				new SeatInfo();
 				setVisible(false);
-=======
 				dialog.setVisible(true);
->>>>>>> branch 'master' of https://github.com/SepYoKim6745/Please_Movie.git
 			}
 		});
 		
