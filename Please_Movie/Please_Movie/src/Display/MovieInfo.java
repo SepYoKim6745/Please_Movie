@@ -71,10 +71,11 @@ public class MovieInfo extends JFrame {
 		title.setFont(MainFrame.boldone);
         //상세정보
 		int detailNum = 0;
-		if (movieNum > 0){
+		if (movieNum > 1){
 			detailNum = 1;
 		}
         String[][] detailList = {{"감독 : 황인호","장르 : 액션", "RunTime:110분"},{"감독 : none","장르 : none", "RunTime:none"}};
+		
 		JLabel detail = new JLabel("<html><body>"+ detailList[detailNum][0] +"<br>"+ detailList[detailNum][1] +"<br>"+ detailList[detailNum][2] +"<br></body></html>");
         detail.setFont(MainFrame.nomone);
 		//줄거리
