@@ -76,7 +76,7 @@ public class MobileTicket extends JFrame{
 		
 		JLabel movieName = new JLabel("데시벨");
 		movieName.setBounds(230,50,200,50);
-		movieName.setFont(new Font("닉스곤체 B 2.0", Font.BOLD,30));
+		movieName.setFont(new Font("닉스곤체 B 2.0", Font.PLAIN,40));
 		ticket.add(movieName);
 		
 		JLabel str1 = new JLabel("상영정보");
@@ -102,7 +102,7 @@ public class MobileTicket extends JFrame{
 		str4.setForeground(gray1);
 		ticket.add(str4);
 		
-		JLabel str5 = new JLabel("좌석 : A-1");
+		JLabel str5 = new JLabel("좌석 : A-5, A-6, A-7");
 		str5.setBounds(50,390,200,50);
 		str5.setFont(new Font("닉스곤체 M 2.0", Font.PLAIN,20));
 		str5.setForeground(gray1);

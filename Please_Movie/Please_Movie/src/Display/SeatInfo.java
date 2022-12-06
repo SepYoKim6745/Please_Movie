@@ -50,8 +50,11 @@ public class SeatInfo extends JFrame {
 		ImageIcon backButtonImage = new ImageIcon();
 
 		//뒤로가기 버튼 생성 
-		backButtonImage = new ImageIcon("");
-		JButton backButton = new JButton("<<---");
+		ImageIcon arrow = new ImageIcon("Please_Movie/src/image/arrow.png");
+		Image arrowImage = arrow.getImage();
+		arrowImage = arrowImage.getScaledInstance(50,20,Image.SCALE_SMOOTH);
+		ImageIcon aRrow = new ImageIcon(arrowImage);
+		JButton backButton = new JButton(aRrow);
 		backButton.addActionListener(new BackMenuAction());
 		backButton.setBackground(crimson);
 		mb.add(backButton);

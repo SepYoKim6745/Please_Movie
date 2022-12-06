@@ -28,7 +28,7 @@ public class MyDialog extends JDialog{
 		p1.setLayout(new FlowLayout(FlowLayout.LEFT, 30, 30));
 		this.add(p1,"North");
 		JLabel info = new JLabel(location + brand + "/" +time);
-		Font titleFont = new Font("굴림", Font.BOLD, 25);
+		Font titleFont = new Font("닉스곤체 B 2.0", Font.PLAIN, 25);
 		info.setFont(titleFont);
 		p1.add(info);
 		
@@ -36,6 +36,7 @@ public class MyDialog extends JDialog{
 		centerPanel.setLayout(new BorderLayout());
 		this.add(centerPanel,"Center");
 		JLabel subInfo = new JLabel("<html>상영관 : 8관 <br> 잔여 좌석 : 15<br><br><br><br></html>");
+		subInfo.setFont(new Font("닉스곤체 M 2.0",Font.PLAIN, 18));
 		JPanel subNorthPanel = new JPanel();
 		subNorthPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 30, 0));
 		centerPanel.add(subNorthPanel,"North");

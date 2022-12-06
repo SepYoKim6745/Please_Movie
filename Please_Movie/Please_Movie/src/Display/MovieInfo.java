@@ -70,16 +70,24 @@ public class MovieInfo extends JFrame {
         JLabel title = new JLabel(titleList[movieNum - 1]);
 		title.setFont(MainFrame.boldone);
         //상세정보
-        String[] detailList = {"감독 : 은재민","장르 : 스릴러", "RunTime:115분"};
-        JLabel detail = new JLabel("<html><body>"+ detailList[0] +"<br>"+ detailList[1] +"<br>"+ detailList[2] +"<br></body></html>");
+		int detailNum = 0;
+		if (movieNum > 0){
+			detailNum = 1;
+		}
+        String[][] detailList = {{"감독 : 황인호","장르 : 액션", "RunTime:110분"},{"감독 : none","장르 : none", "RunTime:none"}};
+		JLabel detail = new JLabel("<html><body>"+ detailList[detailNum][0] +"<br>"+ detailList[detailNum][1] +"<br>"+ detailList[detailNum][2] +"<br></body></html>");
         detail.setFont(MainFrame.nomone);
 		//줄거리
-        String story = "들어보라, 청춘의 피는 끓는다. 끓는 피에 뛰노는 심장은 거선의 기관과 같이 힘있다. 이것이다...";
-        JLabel ItisStory = new JLabel("<html>줄거리</html>");
-		ItisStory.setFont(new Font("닉스곤체 L 2.0",Font.PLAIN, 30));
+        String story[] = new String[8];
+    	story[0] = "물이 끓는 주전자 소리, 창문 여는 소리, 놀이터 아이들의 웃음 소리... 잠시 후, 거대한 굉음과 함께 단독 주택이 폭발했다는 뉴스 속보가 전해진다.";
+		for(int  i = 1; i < 8;i++){
+			story[i] = "none";
+		}
+		JLabel ItisStory = new JLabel("<html>줄거리</html>");
+		ItisStory.setFont(new Font("닉스곤체 M 2.0",Font.PLAIN, 30));
         JTextPane StoryPane = new JTextPane();
 		StoryPane.setFont(MainFrame.lightone);
-		StoryPane.setText(story);
+		StoryPane.setText(story[movieNum - 1]);
         //이동버튼
         JButton toChoose = new JButton("예매하기>");
 		toChoose.setFont(MainFrame.nomone);

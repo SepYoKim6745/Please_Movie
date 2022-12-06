@@ -50,6 +50,7 @@ public class Choose extends JFrame{
 		updateIcon = new ImageIcon(updateImg);
 		imgLabel.setIcon(updateIcon);
 		JLabel thaterInfo = new JLabel("CGV - 천안 신부점 / 22:20 상영관: 8관 / 잔여 좌석: 15석 / 거 리 : 240M");
+		thaterInfo.setFont(new Font("닉스곤체 B 2.0",Font.PLAIN, 13));
 		dialog = new MyDialog(this, "영화를 부탁해", "천안 신부점", "CGV", "22:20");
 		// if(ok == 1) setVisible(false);
 		// new Actio
@@ -73,7 +74,8 @@ public class Choose extends JFrame{
 		updateIcon = new ImageIcon(updateImg);
 		imgLabel2.setIcon(updateIcon);
 		JLabel thaterInfo2 = new JLabel("CGV - 천안 신부점 / 22:20 상영관: 8관 / 잔여 좌석: 15석 / 거 리 : 240M");
-		
+		thaterInfo2.setFont(new Font("닉스곤체 B 2.0",Font.PLAIN, 13));
+
 		imgLabel2.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
 				dialog.setVisible(true);
@@ -93,7 +95,8 @@ public class Choose extends JFrame{
 		updateIcon = new ImageIcon(updateImg);
 		imgLabel3.setIcon(updateIcon);
 		JLabel thaterInfo3 = new JLabel("CGV - 천안 신부점 / 22:20 상영관: 8관 / 잔여 좌석: 15석 / 거 리 : 240M");
-		
+		thaterInfo3.setFont(new Font("닉스곤체 B 2.0",Font.PLAIN, 13));
+
 		imgLabel3.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
 				dialog.setVisible(true);
@@ -113,7 +116,8 @@ public class Choose extends JFrame{
 		updateIcon = new ImageIcon(updateImg);
 		imgLabel4.setIcon(updateIcon);
 		JLabel thaterInfo4 = new JLabel("CGV - 천안 신부점 / 22:20 상영관: 8관 / 잔여 좌석: 15석 / 거 리 : 240M");
-		
+		thaterInfo4.setFont(new Font("닉스곤체 B 2.0",Font.PLAIN, 13));
+
 		imgLabel4.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
 				dialog.setVisible(true);
@@ -133,7 +137,8 @@ public class Choose extends JFrame{
 		updateIcon = new ImageIcon(updateImg);
 		imgLabel5.setIcon(updateIcon);
 		JLabel thaterInfo5 = new JLabel("CGV - 천안 신부점 / 22:20 상영관: 8관 / 잔여 좌석: 15석 / 거 리 : 240M");
-		
+		thaterInfo5.setFont(new Font("닉스곤체 B 2.0",Font.PLAIN, 13));
+
 		imgLabel5.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
 				dialog.setVisible(true);
@@ -149,7 +154,10 @@ public class Choose extends JFrame{
 		filterPanel.setLayout(new FlowLayout(FlowLayout.LEFT,80,10));
 		filterPanel.setBackground(Color.white);
 		JLabel location = new JLabel("천안시 동남구");
+		location.setFont(new Font("닉스곤체 B 2.0",Font.PLAIN, 15));
+
 		JLabel date = new JLabel("11.16(화)");
+		date.setFont(new Font("닉스곤체 B 2.0",Font.PLAIN, 15));
 		String[] brand = {"CGV", "MegaBox", "롯데시네마"};
 		JComboBox filterBrand = new  JComboBox(brand);
 		filterPanel.add(location);
