@@ -3,11 +3,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.*;
 import javax.swing.*;
-
-import Display.Choose.HomeAction;
-import Display.Choose.MobileTicketAction;
-import Display.Choose.SettingAction;
-
+//600 x 900
+//테마색 사용
+//폰트 : 닉스곤체 2.0 (L,M,B)
+//이미지 : Please_Movie\src\image\...
 public class MovieList extends JFrame{
 	JButton[] MVButtons = new JButton[8];
 	ImageIcon[] poster = new ImageIcon[8];
